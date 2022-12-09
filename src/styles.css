@@ -31,6 +31,8 @@
 
         box-sizing: border-box;
         font-family: 'Inconsolata', monospace; /* general */
+        color: black;
+        background-color: rgb(190, 180, 170);
     }
 
     
