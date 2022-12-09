@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* notes */
+    /*
+        FONT
+        'Inconsolata', monospace;  -testi generali-
+        'Playfair Display', serif; -nav/footer-
+
+        COLORI
+        rgba(0, 0, 0, 0.3) -nav, nero trasparente-
+
+        background-color: rgba(240, 220, 200); -grigio, sfondo-
+
+        ALTRO
+
+    */
+
+
+
+
+
+
+/* fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Playfair+Display&display=swap');
+
+
+/* reset */
+    html,
+    body {
+        margin: 0 auto;
+        padding: 0 auto;
+
+        box-sizing: border-box;
+        font-family: 'Inconsolata', monospace; /* general */
+    }
+
+    
