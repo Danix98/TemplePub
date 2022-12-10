@@ -1,0 +1,11 @@
+
+nav{
+    width: 100%;
+    padding: 10px 0px;
+}
+
+nav a{ 
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    text-transform: uppercase;
+}
