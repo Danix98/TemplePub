@@ -16,8 +16,7 @@
     text-decoration: none;
 }
 
-
-
+/* --- */
 
 .naviga_us {
     font-weight: bold;
@@ -25,22 +24,16 @@
     margin: auto;
 }
 
-/*
-
 .socials {
-
+    font-size: 3em;
+    margin: auto;
 }
-
-*/
 
 .info ul li {
     padding: 2px 0;
 }
 
-
-
-
-
+/* --- */
 
 footer a {
     list-style-type: none;
