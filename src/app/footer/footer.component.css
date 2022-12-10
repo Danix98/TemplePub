@@ -1,0 +1,53 @@
+
+.end {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+
+
+.naviga_us {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: auto;
+}
+
+/*
+
+.socials {
+
+}
+
+*/
+
+.info ul li {
+    padding: 2px 0;
+}
+
+
+
+
+
+
+footer a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+footer li,
+footer a {
+    color: rgba(240, 220, 200); 
+}
