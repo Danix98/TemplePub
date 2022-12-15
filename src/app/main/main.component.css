@@ -14,14 +14,18 @@ img {
     border-radius: 3em;
 }
 
-img.img_odd{
+img.img_odd {
     border-bottom-left-radius: 8rem;
     border-top-right-radius: 8rem;
     box-shadow: -7.5px -7.5px 7.5px rgba(0, 0, 0, 0.4);
 }
 
-img.img_even{
+img.img_even {
     border-bottom-right-radius: 8rem;
     border-top-left-radius: 8rem;
+    box-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, 0.4);
+}
+
+iframe {
     box-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, 0.4);
 }

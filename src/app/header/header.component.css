@@ -1,6 +1,6 @@
 
 .banner {
-    height: 25em;
+    height: 27em;
     padding-top: 7.5em;
 
     background-image: url(../../../bg/bottles.jpg);
@@ -11,10 +11,10 @@
 
 h1{
     font-family: 'Playfair Display', serif;
-    width: 8.5em;
+    width: 8em;
     margin-left: auto;
 
-    font-size: 5em;
+    font-size: 4.8em;
     color: rgb(190, 165, 128);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 80px;
