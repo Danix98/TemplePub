@@ -7,6 +7,7 @@ import { NavComponent } from './header/nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShopHeaderComponent } from './shop-header/shop-header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     NavComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    ShopHeaderComponent
   ],
   imports: [
     BrowserModule,
