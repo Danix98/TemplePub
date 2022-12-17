@@ -7,7 +7,12 @@ section div {
     position: absolute;
 
     border-left: 2px solid rgba(0, 0, 0, 0.4);
-    height: 800px;
-    top: 50%;
+    height: 800px; /* cambiare */
+    top: 5vh;
     left: 57.5%;
+}
+
+.prova {
+    height: 800px; /* cambiare */
+    border-radius: 4%;
 }
