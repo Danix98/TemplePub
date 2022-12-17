@@ -1,0 +1,13 @@
+
+section div {
+    flex-direction: column;
+}
+
+.breaker {
+    position: absolute;
+
+    border-left: 2px solid rgba(0, 0, 0, 0.4);
+    height: 800px;
+    top: 50%;
+    left: 57.5%;
+}
