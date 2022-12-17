@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShopHeaderComponent } from './shop-header/shop-header.component';
+import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
+import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ShopHeaderComponent } from './shop-header/shop-header.component';
     NavComponent,
     MainComponent,
     FooterComponent,
-    ShopHeaderComponent
+    ShopHeaderComponent,
+    ShopInfoComponent,
+    ShopCartComponent
   ],
   imports: [
     BrowserModule,
