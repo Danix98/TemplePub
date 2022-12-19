@@ -1,8 +1,4 @@
 
-section div {
-    flex-direction: column;
-}
-
 .breaker {
     position: absolute;
 
@@ -15,8 +11,6 @@ section div {
 .prova {
     height: 800px; /* cambiare */
     border-radius: 4%;
-
-    flex: wrap;
 }
 
 .img_shop {
