@@ -3,16 +3,28 @@
     position: absolute;
 
     border-left: 2px solid rgba(0, 0, 0, 0.4);
-    height: 800px; /* cambiare */
+    height: 100vh;
     top: 5vh;
     left: 57.5%;
 }
 
-.prova {
-    height: 800px; /* cambiare */
+#vetrina_cont {
+    height: auto;
     border-radius: 4%;
+    text-align: center;
 }
 
 .img_shop {
-    width: 220px;
+    width: 11.5em;
+}
+
+
+.set {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    font-size: 2.3em;
+    text-align: center;
 }
