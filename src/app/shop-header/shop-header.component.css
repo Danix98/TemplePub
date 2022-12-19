@@ -15,4 +15,10 @@ section div {
 .prova {
     height: 800px; /* cambiare */
     border-radius: 4%;
+
+    flex: wrap;
+}
+
+.img_shop {
+    width: 220px;
 }
