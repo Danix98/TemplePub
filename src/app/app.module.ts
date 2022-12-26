@@ -7,11 +7,15 @@ import { NavComponent } from './header/nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShopHeaderComponent } from './shop-header/shop-header.component';
+import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
+import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router'
 
 const appRoutes : Routes = [
   { path: '', component: MainComponent },
+  { path: 'shop', component: ShopHeaderComponent },
   { path: 'info', component: InfoComponent }
 ];
 
@@ -22,7 +26,9 @@ const appRoutes : Routes = [
     NavComponent,
     MainComponent,
     FooterComponent,
-    InfoComponent
+    ShopHeaderComponent,
+    ShopInfoComponent,
+    ShopCartComponent
   ],
   imports: [
     BrowserModule,
