@@ -28,7 +28,8 @@ const appRoutes : Routes = [
     FooterComponent,
     ShopHeaderComponent,
     ShopInfoComponent,
-    ShopCartComponent
+    ShopCartComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
