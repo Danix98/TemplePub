@@ -8,6 +8,12 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfoComponent } from './info/info.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes : Routes = [
+  { path: '', component: MainComponent },
+  { path: 'info', component: InfoComponent }
+];
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import { InfoComponent } from './info/info.component';
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
