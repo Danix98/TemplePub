@@ -14,5 +14,7 @@ export class MainComponent {
 
   text_fou = "Il processo produttivo della birra viene chiamato birrificazione o brassaggio e richiede numerose fasi di lavorazione. La prima di queste fasi è la maltificazione' (detta anche 'maltazione'): l'orzo o gli altri cereali, dopo essere stati selezionati e ripuliti, vengono immessi nelle vasche di macerazione dove ricevono l'acqua e l'ossigeno necessario per la germinazione. In taluni casi i cereali sono (parzialmente) impiegati anche non maltati.";
 
-  text_fiv = "La birra aveva analoga importanza nell'Antico Egitto, dove la popolazione la beveva fin dall'infanzia, considerandola anche un alimento ed una medicina. Addirittura una birra a bassa gradazione o diluita con acqua e miele veniva somministrata ai neonati quando le madri non avevano latte. Anche per gli Egizi la birra aveva un carattere mistico, tuttavia c'era una grossa differenza rispetto ai Babilonesi: la produzione della birra non era più artigianale, ma era divenuta una vera e propria industria, con i faraoni che possedevano persino delle fabbriche.";
+  text_fiv = "La birra aveva analoga importanza nell'Antico Egitto, dove la popolazione la beveva fin dalla sua infanzia, considerandola anche un alimento ed una medicina. Addirittura una birra a bassa gradazione o diluita con acqua e miele veniva somministrata ai neonati quando le madri non avevano latte.";
+
+  text_six = "Anche per gli Egizi la birra aveva un carattere mistico, tuttavia c'era una grossa differenza rispetto ai Babilonesi: la produzione della birra non era più artigianale, ma era divenuta una vera e propria industria, con i faraoni che possedevano persino delle fabbriche."
 }

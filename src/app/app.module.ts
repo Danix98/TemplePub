@@ -14,7 +14,7 @@ import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
 
 const appRoutes : Routes = [
-  { path: '', component: MainComponent },
+  { path: 'home', component: MainComponent },
   { path: 'shop', component: ShopHeaderComponent },
   { path: 'info', component: InfoComponent }
 ];
