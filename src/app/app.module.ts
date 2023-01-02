@@ -19,7 +19,8 @@ const appRoutes : Routes = [
     children: [  { path: 'info', component: ShopInfoComponent },
                 { path: 'cart', component: ShopCartComponent }
               ] },
-  { path: 'info', component: InfoComponent }
+  { path: 'info', component: InfoComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
