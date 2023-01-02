@@ -11,22 +11,28 @@
                 <div class="col-md-4">
                     <img src="../../assets/img/birra1.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
-                        <button class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <img src="../../assets/img/birra2.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
-                        <button class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <img src="../../assets/img/birra3.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
-                        <button class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
             </div>
@@ -37,22 +43,28 @@
                 <div class="col-md-4">
                     <img src="../../assets/img/l1.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
-                        <button class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <img src="../../assets/img/l2.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
-                        <button class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <img src="../../assets/img/l3.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
-                        <button class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
             </div>
@@ -65,8 +77,7 @@
     <div class="col-md-5"> <!-- DX -->
         <!-- <p>dettagli/cart (DYNAMIC)</p> -->
 
-        <app-shop-info></app-shop-info>
-        <app-shop-cart></app-shop-cart>
+    <router-outlet></router-outlet>
     </div>
 
     <span style="height: 3em; display: block;"></span>
