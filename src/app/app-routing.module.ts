@@ -8,6 +8,7 @@ import { ShopInfoComponent } from "./shop-header/shop-info/shop-info.component";
 import { InfoComponent } from "./info/info.component";
 
 const appRoutes : Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: MainComponent },
     { path: 'shop', component: ShopHeaderComponent ,
       children: [  { path: 'info', component: ShopInfoComponent },
