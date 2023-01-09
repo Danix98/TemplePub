@@ -8,6 +8,19 @@
             <p class="set pb-3">vetrina</p>
 
             <div class="row mx-1">
+                <div class="col-md-4" *ngFor="let i of drinks">
+                    <img [src]="i.imgpath" alt="{{ i.name }}" class="img_shop">
+                    <div class="text-center mt-1">
+                        <button (click)="onLoadInfo()"
+                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        <button (click)="onLoadShop()"
+                                class="btn btn-outline-success ms-1 ff">Acquista</button>
+                    </div>
+                </div>
+            </div>
+
+<!-- 
+            <div class="row mx-1">
                 <div class="col-md-4">
                     <img src="../../assets/img/birra1.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
@@ -36,40 +49,41 @@
                     </div>
                 </div>
             </div>
-
             <span style="height: 3em; display: block;"></span>
-
+            
             <div class="row mx-1">
                 <div class="col-md-4">
                     <img src="../../assets/img/l1.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
                         <button (click)="onLoadInfo()"
-                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        class="btn btn-outline-info me-1 ff">Vedi</button>
                         <button (click)="onLoadShop()"
-                                class="btn btn-outline-success ms-1 ff">Acquista</button>
+                        class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <img src="../../assets/img/l2.jpg" alt="" class="img_shop">
                     <div class="text-center mt-1">
                         <button (click)="onLoadInfo()"
-                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                        class="btn btn-outline-info me-1 ff">Vedi</button>
                         <button (click)="onLoadShop()"
                                 class="btn btn-outline-success ms-1 ff">Acquista</button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <img src="../../assets/img/l3.jpg" alt="" class="img_shop">
-                    <div class="text-center mt-1">
-                        <button (click)="onLoadInfo()"
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../../assets/img/l3.jpg" alt="" class="img_shop">
+                            <div class="text-center mt-1">
+                                <button (click)="onLoadInfo()"
                                 class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button (click)="onLoadShop()"
+                                <button (click)="onLoadShop()"
                                 class="btn btn-outline-success ms-1 ff">Acquista</button>
-                    </div>
-                </div>
+                            </div>
+                        </div>
             </div>
+        -->
+               
         </div>
-
+        
     </div>
 
     <div class="col-md-1 breaker"></div> <!--non va ad incidere come colonna-->
