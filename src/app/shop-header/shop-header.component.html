@@ -7,9 +7,12 @@
         <div class="bg-light me-3 pb-5" id="vetrina_cont">
             <p class="set pb-3">vetrina</p>
 
+            <h5>{{ drinks | json }}</h5>
+
             <div class="row mx-1">
-                <div class="col-md-4" *ngFor="let i of drinks">
-                    <img [src]="i.imgpath" alt="{{ i.name }}" class="img_shop">
+                <div class="col-md-4" *ngFor="let drink of drinks">
+                    <img [src]="drink.imgpath" alt="{{ prova }}" class="img_shop">
+                    <h4>{{ drink.name }}</h4>
                     <div class="text-center mt-1">
                         <button (click)="onLoadInfo()"
                                 class="btn btn-outline-info me-1 ff">Vedi</button>

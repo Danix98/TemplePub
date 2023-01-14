@@ -1,9 +1,9 @@
 
 /* SERVICE IN HEADER E CART */
 
-import { Drink } from "./shop-header.model";
+import { Drink } from "./Drink.model";
 
-export class ShopHeaderService {
+export class DrinkService {
     private drinks: Drink[] = [
         new Drink(1, 'primo lorem', '../../assets/img/birra1.jpg', 10),
         new Drink(2, 'secondo lorem', '../../assets/img/birra2.jpg', 20),
@@ -13,9 +13,7 @@ export class ShopHeaderService {
         new Drink(6, 'sesto lorem', '../../assets/img/l3.jpg', 60)
       ];
 
-
-
-      getDrinks() {
-        return this.drinks.slice();
+      getDrinks = () => {
+        return this.drinks;
       }
 }

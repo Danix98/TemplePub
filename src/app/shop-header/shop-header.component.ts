@@ -1,29 +1,41 @@
 
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { Drink } from './shop-header.model';
-import { ShopHeaderService } from './shop-header.service';
+import { Drink } from './Drink.model';
+import { DrinkService } from './Drink.service';
 
 @Component({
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
   styleUrls: ['./shop-header.component.css'],
-  providers: [ShopHeaderService]
+  providers: [DrinkService]
 })
 
 export class ShopHeaderComponent implements OnInit {
 
   drinks: Drink[];
+  id: number;
 
-  constructor( private ShopHeaderService: ShopHeaderService, private router_btn: Router ) {
-  }
+  constructor( private DrinkService: DrinkService, private router_btn: Router,
+    private route: ActivatedRoute ) { }
 
 
 
   ngOnInit() {
-    this.drinks = this.ShopHeaderService.getDrinks();
+
+    this.route.params.subscribe (
+      (params: Params) => {
+        this.id = +params['id'];
+          
+          this.drinks = this.DrinkService.getDrinks();
+
+        // this.drink = this.shs.getDrinks(this.name, this.price);
+        // this.shs.getDrinks();
+      }
+    )  
   }
+
 
   onLoadInfo() {
     this.router_btn.navigate(['shop/info']);

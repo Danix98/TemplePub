@@ -11,6 +11,7 @@ export class Drink {
         desc = this.description;
         imgpath = this.imgpath;
         price = this.price;
+
     }
 
 }
