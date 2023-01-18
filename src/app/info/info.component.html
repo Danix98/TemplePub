@@ -6,15 +6,25 @@
 
     <div class="row">
       <div class="col-md-6 m-auto">
-        <form>
+        <form [formGroup]="sendMessage" (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label" style="font-weight: bold;">E-mail:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
+            <span *ngIf="!sendMessage.get('email').valid && sendMessage.get('email').touched"
+            class="form-label" style="color: red; font-weight: bold;">
+            Inserisci una mail valida!</span>
           </div>
-          <textarea class="form-control" placeholder="Il tuo messaggio" style="height: 5em"></textarea>
+          <textarea formControlName="messaggio" class="form-control" placeholder="Il tuo messaggio" style="height: 5em"></textarea>
+          <span *ngIf="!sendMessage.get('messaggio').valid && sendMessage.get('messaggio').touched"
+            class="form-label" style="color: red; font-weight: bold;">
+            Nessun messaggio inserito</span>
           <br>
           <div style="float: right;">
-            <button type="submit" class="btn btn-light" style="text-transform: uppercase; font-weight: bold;">Invia</button>
+            <button
+            *ngIf="sendMessage.valid"
+            type="submit"
+            class="btn btn-light" style="text-transform: uppercase;">
+            Grazie per il tuo contributo! </button>
           </div>
         </form>
       </div>
