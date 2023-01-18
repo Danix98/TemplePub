@@ -1,12 +1,6 @@
 <footer class="end">
-    <div class="row m-auto">
-           
-        <div *ngIf="router.url === '/info'">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47018.11501931037!2d12.603878218445821!3d42.56310236972136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132efb44daf819f3%3A0x6be10bf1daf18dc2!2s05100%20Terni%2C%20Province%20of%20Terni!5e0!3m2!1sen!2sit!4v1671659467986!5m2!1sen!2sit" width="800" height="350" style="border:0; filter: grayscale(50%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <hr class="my-3" style="width: 35%; margin: auto">
-        </div>
-        
-
+    
+    <div *ngIf="router.url != '/info'" class="row m-auto">
         <div class="col-md-4 naviga_us">
             <ul>
                 <li class="text"><a routerLink="/info">Find Us</a></li>
@@ -32,4 +26,32 @@
             </ul>
         </div>
     </div>
+
+
+
+    <div *ngIf="router.url === '/info'" class="row m-auto">
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47018.11501931037!2d12.603878218445821!3d42.56310236972136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132efb44daf819f3%3A0x6be10bf1daf18dc2!2s05100%20Terni%2C%20Province%20of%20Terni!5e0!3m2!1sen!2sit!4v1671659467986!5m2!1sen!2sit" width="800" height="350" style="border:0; filter: grayscale(50%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <hr class="my-3" style="width: 35%; margin: auto">
+        </div>
+        <div class="col-md-6 socials">
+            <a href="https://twitter.com/home">
+                <fa-icon [icon]="faTwitter" class="type pe-3"></fa-icon>
+            </a>
+            <a href="https://www.facebook.com/">
+                <fa-icon [icon]="faFacebook" class="type ps-3"></fa-icon>
+            </a>
+        </div>
+
+        <div class="col-md-6 info">
+            <ul>
+                <li class="text">©</li>
+                <li class="text">e-mail: abcdefgh@lmnopq.com</li>
+                <li class="text">Telefono: 123456789</li>
+                <li class="text">Roma (RM)</li>
+                <li class="text">Cookies Policy</li>
+            </ul>
+        </div>
+    </div>
+
 </footer>
