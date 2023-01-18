@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -11,4 +13,6 @@ export class FooterComponent {
   faFacebook = faFacebook;
 
   getVarInfo = true;
+
+  constructor(public router: Router) {}
 }
