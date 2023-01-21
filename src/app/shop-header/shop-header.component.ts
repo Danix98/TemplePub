@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Drink } from './Drink.model';
@@ -11,6 +11,7 @@ import { DrinkService } from './Drink.service';
   styleUrls: ['./shop-header.component.css'],
   providers: [DrinkService]
 })
+
 
 export class ShopHeaderComponent implements OnInit {
 

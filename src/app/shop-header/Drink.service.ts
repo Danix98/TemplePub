@@ -1,6 +1,4 @@
 
-/* SERVICE IN HEADER E CART */
-
 import { Drink } from "./Drink.model";
 
 export class DrinkService {

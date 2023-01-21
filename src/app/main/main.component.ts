@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
+
 export class MainComponent {
   text_one = "La birra è una delle bevande più antiche prodotte dall'uomo, probabilmente databile al settimo millennio a.C., registrata nella storia scritta dell'antico Egitto e della Mesopotamia. La prima testimonianza chimica nota è datata intorno al 3500-3100 a.C. Poiché quasi qualsiasi sostanza contenente carboidrati, come ad esempio zucchero e amido, può andare naturalmente incontro a fermentazione, è probabile che bevande simili alla birra siano state inventate l'una indipendentemente dall'altra da diverse culture in ogni parte del mondo. È stato sostenuto che l'invenzione del pane e della birra sia stata responsabile della capacità dell'uomo di sviluppare tecnologie e di diventare sedentario, formando delle civiltà stabili.";
 

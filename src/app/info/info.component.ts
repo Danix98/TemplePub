@@ -1,4 +1,5 @@
-import { Component, OnInit, resolveForwardRef } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,10 +8,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./info.component.css']
 })
 
+
 export class InfoComponent implements OnInit {
-
   sendMessage: FormGroup;
-
 
   ngOnInit() {
     this.sendMessage = new FormGroup({

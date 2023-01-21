@@ -12,14 +12,18 @@
 
         ALTRO
 
-            DA FARE, EXTRA:
-            - mappa sul footer di info (binding il DIV col display block se var x = true [info])
-            - hamburger menu
-            - hover: NAV, FOOTER, SHOP BG_PROD
-            - custom HR in main (txt/img)
+            DA FARE:
             - CSS custom prop (stili duplicati)
-            - responsive
+            - hover: NAV, FOOTER, SHOP BG_PROD
+            - responsive:
+                -main (tweaks)
+                -shop (-ingrandisci la finestra per visualizzare-)
+                -info (tweaks)
 
+            EXTRA:
+            - custom HR in main (txt/img)
+            - animazioni generali
+            - spinner nel form in info
     */
 
 

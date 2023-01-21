@@ -44,13 +44,3 @@ footer li,
 footer a {
     color: rgba(240, 220, 200); 
 }
-
-/* 
-footer a .type {
-    transition: transform ease-out 0.5s;
-}
-
-footer a .type:hover {
-    transform: scale(1.3);
-}
- */

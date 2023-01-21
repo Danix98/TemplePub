@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,11 +9,11 @@ import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
+
+
 export class FooterComponent {
   faTwitter = faTwitter;
   faFacebook = faFacebook;
-
-  getVarInfo = true;
 
   constructor(public router: Router) {}
 }
