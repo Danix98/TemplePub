@@ -6,7 +6,7 @@
 
     <div class="row">
       <div class="col-md-6 m-auto">
-        <form [formGroup]="sendMessage" (ngSubmit)="onSubmit()">
+        <form [formGroup]="sendMessage">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label" style="font-weight: bold;">E-mail:</label>
             <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
@@ -21,6 +21,7 @@
           <br>
           <div style="float: right;">
             <button
+            (click) = "onInoltro()"
             *ngIf="sendMessage.valid"
             type="submit"
             class="btn btn-light" style="text-transform: uppercase;">

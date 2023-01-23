@@ -19,10 +19,7 @@ export class InfoComponent implements OnInit {
     })
   }
 
-
-
-
-  onSubmit() {
-
+  onInoltro() {
+    console.log('Form: Invio riuscito')
   }
 }
