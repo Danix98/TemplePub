@@ -25,16 +25,8 @@ export class ShopHeaderComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe (
-      (params: Params) => {
-        this.id = +params['id'];
           
           this.drinks = this.DrinkService.getDrinks();
-
-        // this.drink = this.shs.getDrinks(this.name, this.price);
-        // this.shs.getDrinks();
-      }
-    )  
   }
 
 
