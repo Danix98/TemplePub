@@ -6,12 +6,11 @@ export class Drink {
     imgpath: string; //info
     price: number; //cart
 
-    constructor (name: number, desc: string, imgpath: string, price: number) {
-        name = this.name;
-        desc = this.description;
-        imgpath = this.imgpath;
-        price = this.price;
-
+    constructor (name: number, description: string, imgpath: string, price: number) {
+        this.name = name;
+        this.description = description;
+        this.imgpath = imgpath;
+        this.price = price;
     }
 
 }

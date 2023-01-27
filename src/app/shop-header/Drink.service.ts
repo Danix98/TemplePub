@@ -2,7 +2,7 @@
 import { Drink } from "./Drink.model";
 
 export class DrinkService {
-    private drinks: Drink[] = [
+     private drinks: Drink[] = [
         new Drink(1, 'primo lorem', '../../assets/img/birra1.jpg', 10),
         new Drink(2, 'secondo lorem', '../../assets/img/birra2.jpg', 20),
         new Drink(3, 'terzo lorem', '../../assets/img/birra3.jpg', 30),

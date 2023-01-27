@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Drink } from './Drink.model';
 import { DrinkService } from './Drink.service';
@@ -18,15 +18,11 @@ export class ShopHeaderComponent implements OnInit {
   drinks: Drink[];
   id: number;
 
-  constructor( private DrinkService: DrinkService, private router_btn: Router,
-    private route: ActivatedRoute ) { }
+  constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
 
 
-
-  ngOnInit() {
-
-          
-          this.drinks = this.DrinkService.getDrinks();
+  ngOnInit() { 
+    this.drinks = this.DrinkService.getDrinks();
   }
 
 
