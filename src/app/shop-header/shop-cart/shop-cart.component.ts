@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { Drink } from '../Drink.model';
+import { Drink } from '../../shared/Drink.model';
 
 @Component({
   selector: 'app-shop-cart',
