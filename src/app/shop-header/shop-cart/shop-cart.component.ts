@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { DrinkService } from '../Drink.service';
+import { Drink } from '../Drink.model';
 
 @Component({
   selector: 'app-shop-cart',
@@ -12,8 +12,8 @@ import { DrinkService } from '../Drink.service';
 
 export class ShopCartComponent implements OnInit {
 
+  drink: Drink;
   id: number;
-  drink: DrinkService;
   lPrice: number;
   nPrice: number;
   limitQnt = 50;
@@ -35,7 +35,7 @@ export class ShopCartComponent implements OnInit {
 
   onCheckQnt(event: Event) {
     this.lPrice = +(<HTMLInputElement>event.target).value
-    this. nPrice = this.lPrice *20000000;
+    this. nPrice = this.lPrice * +`${ this.drink.price }`
 
     if(this.lPrice > this.limitQnt || this.lPrice <1) {
       return (this.nPrice = undefined)
