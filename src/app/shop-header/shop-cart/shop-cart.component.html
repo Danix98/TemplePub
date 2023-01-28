@@ -20,7 +20,11 @@
             type="text"
             class="form-control"
             id="name"
-            placeholder="{{ drink.name }}"
+
+
+            placeholder=""
+
+            
             aria-describedby="emailHelp"
             readonly>
 
@@ -36,7 +40,7 @@
                     class="form-control"
                     id="amount"
                     min="1"
-                    max="50"
+                    max="{{ limitQnt }}"
                     placeholder="...."
                     (input)="onCheckQnt($event)"
                     aria-describedby="emailHelp">

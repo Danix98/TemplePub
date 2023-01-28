@@ -26,9 +26,18 @@ export class ShopHeaderComponent implements OnInit {
   }
 
 
-  onLoadInfo() {
+  onLoadInfo(i: number) {
     this.router_btn.navigate(['shop/info']);
-  } onLoadShop() {
+
+    this.id = i;
+    // console.log(this.id)
+    return this.id
+
+  } onLoadShop(i: number) {
     this.router_btn.navigate(['shop/cart']);
+
+    this.id = i;
+    // console.log(this.id)
+    return this.id
   }
 }
