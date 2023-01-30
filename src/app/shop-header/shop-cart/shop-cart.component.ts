@@ -20,13 +20,11 @@ export class ShopCartComponent implements OnInit {
   ngRemove: boolean;
 
   constructor(private DrinkService: DrinkService, private router_btn: Router) { 
-    this.DrinkService.drinkStatus.subscribe( (objStatus: any) => { return objStatus } );
+    this.DrinkService.drinkStatus.subscribe( (objStatus: any) => { console.log(objStatus) } );
    }
 
 
-  ngOnInit() {
-    this.drinks = this.DrinkService.getDrinks();
-  }
+  ngOnInit() { }
  
   onCheckQnt(event: Event) {
     this.lPrice = +(<HTMLInputElement>event.target).value;
@@ -35,7 +33,7 @@ export class ShopCartComponent implements OnInit {
     if(this.lPrice > this.limitQnt || this.lPrice <1) {
       return (this.nPrice = undefined)
     }
-  } 
+  }
 
   onBuy() {
     if(this.lPrice === undefined)

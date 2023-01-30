@@ -8,7 +8,8 @@
             <p class="set pb-3">vetrina</p>
 
             <div class="row mx-1">
-                <div class="col-md-4 my-2" *ngFor="let drink of drinks; let i = index" [attr.data-index]="i">
+                <div class="col-md-4 my-2"
+                    *ngFor="let drink of drinks; let i = index" [attr.data-index]="i">
                     <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
                     <div class="text-center mt-1">
                         <button (click)="onLoadInfo(drink.imgpath, drink.description)"

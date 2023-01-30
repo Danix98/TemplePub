@@ -1,7 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
+import { Drink } from '../../Drink.model';
 import { DrinkService } from '../../Drink.service';
 
 @Component({
@@ -12,23 +13,16 @@ import { DrinkService } from '../../Drink.service';
 
 export class ShopInfoComponent implements OnInit {
 
-  id: number;
-  service: DrinkService;
-  buyMode = false;
+  drinks: Drink[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private DrinkService: DrinkService, private router_btn: Router) { 
+    this.DrinkService.drinkStatus.subscribe( (objStatus: any) => { return objStatus } );
+   }
+
+  ngOnInit() { }
 
 
-  ngOnInit() {
-    this.route.params.subscribe (
-      (params: Params) => {
-        this.buyMode = params['id'] != null; //NON in acquisto-mode
-        this.id = +params['id'];
-
-        // this.drink = this.shs.getDrinks(this.description, this.imgpath);
-        // this.shs.getDrinks();
-      }
-    )
-    // console.log(this.buyMode)
+  onCancel() {
+    this.router_btn.navigate(['shop']);
   }
 }
