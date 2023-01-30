@@ -15,9 +15,9 @@ export class DrinkService {
         new Drink(6, 'sesto lorem', '../../assets/img/l3.jpg', 150.49)
       ];
 
-      drinkStatus = new EventEmitter<number>();
-
       getDrinks = () => {
         return this.drinks;
       }
+      
+      drinkStatus = new EventEmitter<any>();
 }
