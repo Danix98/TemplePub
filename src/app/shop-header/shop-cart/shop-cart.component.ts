@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Drink } from '../../shared/Drink.model';
-import { DrinkService } from '../../shared/Drink.service';
+import { Drink } from '../../Drink.model';
+import { DrinkService } from '../../Drink.service';
 
 @Component({
   selector: 'app-shop-cart',

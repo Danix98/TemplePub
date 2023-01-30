@@ -1,5 +1,9 @@
 
+import { EventEmitter, Injectable } from "@angular/core";
+
 import { Drink } from "./Drink.model";
+
+@Injectable()
 
 export class DrinkService {
      private drinks: Drink[] = [
@@ -10,6 +14,8 @@ export class DrinkService {
         new Drink(5, 'quinto lorem', '../../assets/img/l2.jpg', 120.00),
         new Drink(6, 'sesto lorem', '../../assets/img/l3.jpg', 150.49)
       ];
+
+      drinkStatus = new EventEmitter<number>();
 
       getDrinks = () => {
         return this.drinks;

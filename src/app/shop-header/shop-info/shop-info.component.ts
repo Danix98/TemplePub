@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { DrinkService } from '../../shared/Drink.service';
+import { DrinkService } from '../../Drink.service';
 
 @Component({
   selector: 'app-shop-info',

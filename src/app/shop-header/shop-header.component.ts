@@ -2,14 +2,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Drink } from '../shared/Drink.model';
-import { DrinkService } from '../shared/Drink.service';
+import { Drink } from '../Drink.model';
+import { DrinkService } from '../Drink.service';
 
 @Component({
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
-  styleUrls: ['./shop-header.component.css'],
-  providers: [DrinkService]
+  styleUrls: ['./shop-header.component.css']
 })
 
 
@@ -18,7 +17,11 @@ export class ShopHeaderComponent implements OnInit {
   drinks: Drink[];
   id: number;
 
-  constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
+  constructor( private DrinkService: DrinkService, private router_btn: Router ) {
+    this.DrinkService.drinkStatus.subscribe(
+      (status: number) => { return status }
+    );
+  }
 
 
   ngOnInit() { 
@@ -26,18 +29,14 @@ export class ShopHeaderComponent implements OnInit {
   }
 
 
-  onLoadInfo(i: number) {
+  onLoadInfo(status: number) {
     this.router_btn.navigate(['shop/info']);
 
-    this.id = i;
-    // console.log(this.id)
-    return this.id
+    this.DrinkService.drinkStatus.emit(status)
 
-  } onLoadShop(i: number) {
+  } onLoadShop(status: number) {
     this.router_btn.navigate(['shop/cart']);
 
-    this.id = i;
-    // console.log(this.id)
-    return this.id
+    this.DrinkService.drinkStatus.emit(status)
   }
 }

@@ -11,9 +11,9 @@
                 <div class="col-md-4 my-2" *ngFor="let drink of drinks; let i = index" [attr.data-index]="i">
                     <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
                     <div class="text-center mt-1">
-                        <button (click)="onLoadInfo(i)"
+                        <button (click)="onLoadInfo(drink.name)"
                                 class="btn btn-outline-info me-1 ff">Vedi</button>
-                        <button (click)="onLoadShop(i)"
+                        <button (click)="onLoadShop(drink.name)"
                                 class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
