@@ -15,28 +15,22 @@ import { DrinkService } from '../Drink.service';
 export class ShopHeaderComponent implements OnInit {
 
   drinks: Drink[];
-  id: number;
 
-  constructor( private DrinkService: DrinkService, private router_btn: Router ) {
-    this.DrinkService.drinkStatus.subscribe(
-      (status: number) => { return status }
-    );
-  }
+  constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
 
 
   ngOnInit() { 
     this.drinks = this.DrinkService.getDrinks();
   }
 
-
-  onLoadInfo(status: number) {
+  onLoadInfo(status: string|number, ndStatus: string|number) {
     this.router_btn.navigate(['shop/info']);
 
-    this.DrinkService.drinkStatus.emit(status)
+    this.DrinkService.drinkStatus.emit({status: status, ndStatus: ndStatus})
 
-  } onLoadShop(status: number) {
+  } onLoadShop(status: string|number, ndStatus: string|number) {
     this.router_btn.navigate(['shop/cart']);
 
-    this.DrinkService.drinkStatus.emit(status)
+    this.DrinkService.drinkStatus.emit({status: status, ndStatus: ndStatus})
   }
 }

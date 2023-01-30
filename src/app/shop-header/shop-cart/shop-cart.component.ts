@@ -8,8 +8,7 @@ import { DrinkService } from '../../Drink.service';
 @Component({
   selector: 'app-shop-cart',
   templateUrl: './shop-cart.component.html',
-  styleUrls: ['./shop-cart.component.css'],
-  providers: [DrinkService]
+  styleUrls: ['./shop-cart.component.css']
 })
 
 export class ShopCartComponent implements OnInit {
@@ -20,7 +19,9 @@ export class ShopCartComponent implements OnInit {
   nPrice: number;
   ngRemove: boolean;
 
-  constructor(private DrinkService: DrinkService, private router_btn: Router) { }
+  constructor(private DrinkService: DrinkService, private router_btn: Router) { 
+    this.DrinkService.drinkStatus.subscribe( (objStatus: any) => { return objStatus } );
+   }
 
 
   ngOnInit() {
@@ -28,8 +29,8 @@ export class ShopCartComponent implements OnInit {
   }
  
   onCheckQnt(event: Event) {
-    this.lPrice = +(<HTMLInputElement>event.target).value
-    this. nPrice = this.lPrice * +`${ this.drinks[0].price }`
+    this.lPrice = +(<HTMLInputElement>event.target).value;
+    this. nPrice = this.lPrice * +`${ this.drinks[0].price }`;
 
     if(this.lPrice > this.limitQnt || this.lPrice <1) {
       return (this.nPrice = undefined)
