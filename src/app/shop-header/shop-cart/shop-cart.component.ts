@@ -8,7 +8,7 @@ import { DrinkService } from '../../Drink.service';
 @Component({
   selector: 'app-shop-cart',
   templateUrl: './shop-cart.component.html',
-  styleUrls: ['./shop-cart.component.css']
+  styleUrls: ['../../shared/generics.css', './shop-cart.component.css']
 })
 
 export class ShopCartComponent implements OnInit {

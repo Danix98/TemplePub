@@ -8,7 +8,7 @@ import { DrinkService } from '../Drink.service';
 @Component({
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
-  styleUrls: ['./shop-header.component.css']
+  styleUrls: ['../shared/generics.css' ,'./shop-header.component.css']
 })
 
 

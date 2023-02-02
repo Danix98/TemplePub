@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['../shared/generics.css', './main.component.css']
 })
 
 

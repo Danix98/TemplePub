@@ -1,21 +1,17 @@
 
-<h2 class="set text-center pb-3">Acquista</h2>
+<h2 class="text-center pb-3">Acquista</h2>
 
 
-<br><br><br><br>
+<span class="empty"></span>
 
-<form style="border: 3px solid rgba(240, 220, 200);
-    border-radius: 2%;
-    padding: 0.5em;
-    box-shadow: 5px 10px #888888;">
+<form>
     
     <div class="row"> <!--labels-->
         <div class="col-md-9 m-auto">
 
             <label
                 for="name"
-                class="form-label"
-                style="font-weight: bold;">Prodotto Selezionato:</label>
+                class="form-label">Prodotto Selezionato:</label>
             <input
             type="text"
             class="form-control"
@@ -33,8 +29,7 @@
             <div class="m-auto" style="width: 30%;">
                 <label
                     for="amount"
-                    class="form-label ms-4"
-                    style="font-weight: bold">Quantità</label>
+                    class="form-label ms-4">Quantità</label>
                 <input
                     type="number"
                     class="form-control"
@@ -50,8 +45,7 @@
 
             <label
             for="name"
-            class="form-label"
-            style="font-weight: bold;">Prezzo:</label>
+            class="form-label">Prezzo:</label>
             <input
             type="text"
             class="form-control"
@@ -67,8 +61,8 @@
 
     <div class="row"> <!--buttons-->
         <div class="col-md-9 m-auto">
-            <button (click)="onCancel()" type="button" class="btn btn-danger" style="text-transform: uppercase; font-weight: bold;">Cancella</button>
-            <button (click)="onBuy()" type="button" class="btn btn-light" style="text-transform: uppercase; font-weight: bold; float: right;">Paga</button>
+            <button (click)="onCancel()" type="button" class="btn btn-danger">Cancella</button>
+            <button (click)="onBuy()" type="button" class="btn btn-light">Paga</button>
         </div>
     </div>
 </form>

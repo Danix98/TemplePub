@@ -8,7 +8,7 @@
       <div class="col-md-6 m-auto">
         <form [formGroup]="sendMessage">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label" style="font-weight: bold;">E-mail:</label>
+            <label for="exampleInputEmail1" class="form-label">E-mail:</label>
             <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
             <span *ngIf="!sendMessage.get('email').valid && sendMessage.get('email').touched"
             class="form-label" style="color: red; font-weight: bold;">
@@ -31,6 +31,6 @@
       </div>
     </div>
 
-    <span style="height: 3em; display: block;"></span>
+    <span class="empty"></span>
 
   </section>

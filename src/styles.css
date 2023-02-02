@@ -29,15 +29,20 @@
     */
 
 
-
-
+:root {
+    --ma: auto; /*margin auto*/
+    --ff: 'Playfair Display', serif; /*diff font*/
+    --ttuc: uppercase; /*text uppercase*/
+    --fwb: bold; /*bold font*/
+    --tc: center; /*center text*/
+}
 
 
 /* fonts */
     @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Playfair+Display&display=swap');
 
 
-/* reset */
+/* css constr. -reset- */
     html,
     body {
         margin: 0 auto;
@@ -45,8 +50,8 @@
 
         box-sizing: border-box;
         font-family: 'Inconsolata', monospace;
-        color: black;
         background-color: rgb(190, 180, 170);
+        color: black;
     }
 
     

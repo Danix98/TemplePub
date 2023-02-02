@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrls: ['./info.component.css']
+  styleUrls: ['../shared/generics.css', './info.component.css']
 })
 
 

@@ -8,15 +8,3 @@
     background-attachment: fixed;
     background-size: cover;
 }
-
-h1{
-    font-family: 'Playfair Display', serif;
-    width: 8em;
-    margin-left: auto;
-
-    font-size: 4.8em;
-    color: rgb(190, 165, 128);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 80px;
-    text-align: center;
-}

@@ -1,10 +1,12 @@
 
-nav{
-    width: 100%;
-}
+nav a:after {
+    content: '';
 
-nav a{ 
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    text-transform: uppercase;
+    display:block;
+    border-bottom: solid 3px rgba(0, 0, 0, 0.2);
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    
+}   nav a:hover:after {
+        transform: scaleX(1);
 }

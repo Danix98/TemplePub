@@ -1,0 +1,81 @@
+
+.empty {
+    height: 4.5em;
+    display: block;
+}
+
+/*** ***/
+
+nav {
+    width: 100%;
+
+}   nav a {
+        font-family: var(--ff);
+        font-size: 20px;
+
+        text-transform: var(--ttuc);
+}
+
+/*** ***/
+
+h1 {
+    font-family: var(--ff);
+    font-size: 4.8em;
+
+    margin-left: var(--ma);
+    text-align: var(--tc);
+    width: 8em;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(240, 220, 200, 0.7);
+    border-radius: 80px;
+}
+
+h2 {
+    font-family: var(--ff);
+    font-weight: var(--fwb);
+
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+    text-transform: var(--ttuc);
+}
+
+/*** ***/
+
+footer {
+    flex-direction: column;
+    justify-content: var(--tc);
+
+    width: 100%;
+    padding: 25px 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: var(--tc);
+
+}   footer li {
+        font-family: var(--ff);
+
+        text-transform: var(--ttuc);
+
+}   footer li,
+    footer a {
+        color: rgba(240, 220, 200);
+
+        list-style-type: none;
+        text-decoration: none;
+
+}   footer .naviga_us {
+        margin: var(--ma);
+
+        font-weight: var(--fwb);
+        font-size: 1.5em;
+
+}   footer .socials {
+        margin: var(--ma);
+
+        font-size: 3em;
+
+}   footer .info ul li {
+        padding: 2px 0;
+}

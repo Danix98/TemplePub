@@ -1,14 +1,14 @@
 
 <h2 class="text-center pb-5">Shop</h2>
 
-<section class="row d-flex m-auto" style="position: relative;">
+<section class="row d-flex m-auto">
 
     <div class="col-md-7"> <!-- SX -->
         <div class="bg-light me-3 pb-5" id="vetrina_cont">
-            <p class="set pb-3">vetrina</p>
+            <h2 class="pb-3">vetrina</h2>
 
             <div class="row mx-1">
-                <div class="col-md-4 my-2"
+                <div class="col-md-4 my-2" id="embed"
                     *ngFor="let drink of drinks">
                     <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
                     <div class="text-center mt-1">
@@ -27,6 +27,6 @@
     
     <div class="col-md-5"> <!-- DX --> <router-outlet></router-outlet> </div>
 
-    <span style="height: 3em; display: block;"></span>
+    <span class="empty"></span>
 
 </section>
