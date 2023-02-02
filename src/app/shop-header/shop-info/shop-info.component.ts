@@ -15,11 +15,9 @@ export class ShopInfoComponent implements OnInit {
 
   drinks: Drink[];
 
-  constructor(private DrinkService: DrinkService, private router_btn: Router) { 
-    this.DrinkService.drinkStatus.subscribe( (objStatus: any) => { return objStatus } );
-   }
+  constructor(private DrinkService: DrinkService, private router_btn: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() { this.drinks = this.DrinkService.getDrinks() }
 
 
   onCancel() {

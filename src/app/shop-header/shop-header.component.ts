@@ -21,16 +21,18 @@ export class ShopHeaderComponent implements OnInit {
 
   ngOnInit() { 
     this.drinks = this.DrinkService.getDrinks();
+
+    // this.DrinkService.drinkStatus.subscribe( (objStatus: any) => {console.log(objStatus) } );
   }
 
   onLoadInfo(status: string|number, ndStatus: string|number) {
     this.router_btn.navigate(['shop/info']);
 
-    this.DrinkService.drinkStatus.emit({status: status, ndStatus: ndStatus})
+    this.DrinkService.drinkStatus.emit({imgStatus: status, descStatus: ndStatus})
 
   } onLoadShop(status: string|number, ndStatus: string|number) {
     this.router_btn.navigate(['shop/cart']);
 
-    this.DrinkService.drinkStatus.emit({status: status, ndStatus: ndStatus})
+    this.DrinkService.drinkStatus.emit({nameStatus: status, priceStatus: ndStatus})
   }
 }

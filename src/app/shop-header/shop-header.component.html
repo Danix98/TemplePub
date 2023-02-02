@@ -9,13 +9,13 @@
 
             <div class="row mx-1">
                 <div class="col-md-4 my-2"
-                    *ngFor="let drink of drinks; let i = index" [attr.data-index]="i">
+                    *ngFor="let drink of drinks">
                     <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
                     <div class="text-center mt-1">
                         <button (click)="onLoadInfo(drink.imgpath, drink.description)"
-                                class="btn btn-outline-info me-1 ff">Vedi</button>
+                                type="button" class="btn btn-outline-info me-1 ff">Vedi</button>
                         <button (click)="onLoadShop(drink.name, drink.price)"
-                                class="btn btn-outline-success ms-1 ff">Acquista</button>
+                                type="button" class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
                 </div>
             </div>

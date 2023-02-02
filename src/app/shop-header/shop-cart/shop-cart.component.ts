@@ -19,12 +19,10 @@ export class ShopCartComponent implements OnInit {
   nPrice: number;
   ngRemove: boolean;
 
-  constructor(private DrinkService: DrinkService, private router_btn: Router) { 
-    this.DrinkService.drinkStatus.subscribe( (objStatus: any) => { console.log(objStatus) } );
-   }
+  constructor(private DrinkService: DrinkService, private router_btn: Router) { }
 
 
-  ngOnInit() { }
+  ngOnInit() { this.drinks = this.DrinkService.getDrinks() }
  
   onCheckQnt(event: Event) {
     this.lPrice = +(<HTMLInputElement>event.target).value;
