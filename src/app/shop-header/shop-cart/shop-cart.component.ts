@@ -14,10 +14,15 @@ import { DrinkService } from '../../Drink.service';
 export class ShopCartComponent implements OnInit {
 
   drinks: Drink[];
+
   limitQnt = 50;
   lPrice: number;
   nPrice: number;
+  
   ngRemove: boolean;
+
+  nameStatus = this.DrinkService.status;
+  priceStatus = this.DrinkService.ndStatus;
 
   constructor(private DrinkService: DrinkService, private router_btn: Router) { }
 
@@ -26,7 +31,7 @@ export class ShopCartComponent implements OnInit {
  
   onCheckQnt(event: Event) {
     this.lPrice = +(<HTMLInputElement>event.target).value;
-    this. nPrice = this.lPrice * +`${ this.drinks[0].price }`;
+    this.nPrice = this.lPrice * +this.priceStatus;
 
     if(this.lPrice > this.limitQnt || this.lPrice <1) {
       return (this.nPrice = undefined)
@@ -37,7 +42,7 @@ export class ShopCartComponent implements OnInit {
     if(this.lPrice === undefined)
       alert("Impossibile effettuare l'acquisto");
     else {
-      alert("Hai acquistato: Dettagli");
+      alert("Pagamento effettuato: " + this.nPrice);
       this.router_btn.navigate(['shop']);
     }
   }
