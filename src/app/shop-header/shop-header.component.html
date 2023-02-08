@@ -12,15 +12,25 @@
             <h2 class="pb-3">vetrina</h2>
 
             <div class="row mx-1">
-                <div class="col-md-4 my-2" id="embed"
+                <div class="col-md-4 my-2"
+
+
                     *ngFor="let drink of drinks">
-                    <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
-                    <div class="text-center mt-1">
+                    <div class="galleria mx-3">
+                        <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
+
+                        <div class="visual">
+                             <h5>{{ drink.name | uppercase }}</h5>
+                        </div>
+                    </div>
+                    <div class="mt-2">
                         <button (click)="onLoadInfo(drink.imgpath, drink.description)"
                                 type="button" class="btn btn-outline-info me-1 ff">Vedi</button>
                         <button (click)="onLoadShop(drink.name, drink.price)"
                                 type="button" class="btn btn-outline-success ms-1 ff">Acquista</button>
                     </div>
+
+
                 </div>
             </div>
           

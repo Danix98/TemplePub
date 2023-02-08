@@ -41,6 +41,14 @@ h2 {
     text-transform: var(--ttuc);
 }
 
+h5 {
+    position: relative;
+
+    top: 45%;
+
+    font-weight: var(--fwb);
+}
+
 /*** ***/
 
 footer {
