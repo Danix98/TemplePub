@@ -1,0 +1,14 @@
+
+.img_spec {
+    width: var(--img)*2;
+}
+
+#special_p {
+    font-size: 15px;
+    text-align: justify;
+
+}   #special_p::first-letter {
+        font-size: 300%;
+        text-transform: var(--ttuc);
+        font-weight: var(--fwb);
+}

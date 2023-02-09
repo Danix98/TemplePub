@@ -15,6 +15,7 @@ import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
 import { DrinkService } from './Drink.service';
+import { DrinkDescService } from './Drink-desc.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { DrinkService } from './Drink.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DrinkService],
+  providers: [DrinkService, DrinkDescService],
   bootstrap: [AppComponent]
 })
 

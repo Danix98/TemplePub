@@ -2,23 +2,18 @@
 <h2 class="text-center pb-3">Dettagli</h2>
 
 <div>
-    <button type="submit" class="btn btn-primary" (click)="onCancel()"
-            style=" float: right; text-transform: uppercase; font-weight: bold;">Indietro</button>
+    <button type="submit" class="btn btn-primary" (click)="onCancel()" style=" float: right;">Indietro</button>
 </div>
 
 <span class="empty"></span>
 
-
-
-
-
-<div style="border: 3px solid rgba(240, 220, 200); border-radius: 2%; padding: 0.5em; box-shadow: 5px 10px #888888;">
-    <div class="row mx-1">
-        <div class="col-md-5 m-auto">
-            <img src="{{ imgStatus }}" class="img-fluid" alt="" style="width: 11.5em;">
-            <br><br>
-            <p>{{ descStatus }}</p>
+<div class="shop_holder">
+    <div class="row mx-1" style="text-align: center;">
+        <div class="col-md-6 m-auto">
+            <img src="{{ imgStatus }}" class="img-fluid img_spec" alt="">
+        </div>
+        <div class="col-md-6 m-auto">
+            <p id="special_p">{{ descStatus }}</p>
         </div>
     </div>
 </div>
-

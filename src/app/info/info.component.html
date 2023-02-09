@@ -1,40 +1,45 @@
 
+<section class="container-fluid">
+  <br>
+
+  <h2 class="text-center pb-2">Contattaci</h2>
+
+  <div class="row">
+    <div class="col-md-6 m-auto">
+
+      <form [formGroup]="sendMessage">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">E-mail:</label>
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
+
+          <span *ngIf="!sendMessage.get('email').valid && sendMessage.get('email').touched"
+          class="form-label" style="color: red; font-weight: bold;">
+          Inserisci una mail valida!</span>
+        </div>
+
+        <textarea formControlName="messaggio" class="form-control" placeholder="Il tuo messaggio" style="height: 5em"></textarea>
+
+        <span *ngIf="!sendMessage.get('messaggio').valid && sendMessage.get('messaggio').touched"
+          class="form-label" style="color: red; font-weight: bold;">
+          Nessun messaggio inserito</span>
+        <br>
+
+        <div style="float: right;">
+          <button
+          (click) ="onInoltro()"
+          *ngIf="sendMessage.valid"
+          type="submit"
+          class="btn btn-light" style="text-transform: uppercase;">
+          Grazie per il tuo contributo! </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <span class="empty"></span>
+</section>
+
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
-
-<section class="container-fluid">
-    <br>
-
-    <h2 class="text-center pb-2">Contattaci</h2>
-
-    <div class="row">
-      <div class="col-md-6 m-auto">
-        <form [formGroup]="sendMessage">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">E-mail:</label>
-            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
-            <span *ngIf="!sendMessage.get('email').valid && sendMessage.get('email').touched"
-            class="form-label" style="color: red; font-weight: bold;">
-            Inserisci una mail valida!</span>
-          </div>
-          <textarea formControlName="messaggio" class="form-control" placeholder="Il tuo messaggio" style="height: 5em"></textarea>
-          <span *ngIf="!sendMessage.get('messaggio').valid && sendMessage.get('messaggio').touched"
-            class="form-label" style="color: red; font-weight: bold;">
-            Nessun messaggio inserito</span>
-          <br>
-          <div style="float: right;">
-            <button
-            (click) = "onInoltro()"
-            *ngIf="sendMessage.valid"
-            type="submit"
-            class="btn btn-light" style="text-transform: uppercase;">
-            Grazie per il tuo contributo! </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <span class="empty"></span>
-
-  </section>

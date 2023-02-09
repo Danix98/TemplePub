@@ -20,15 +20,6 @@ section {
     text-align: var(--tc);
 }
 
-.img_shop {
-    width: 11.5em;
-}
-
-.ff {
-    text-transform: uppercase;
-    font-weight: var(--fwb);
-}
-
 .galleria {
     position: relative;
     overflow: hidden;
@@ -47,4 +38,6 @@ section {
 
 }   .galleria:hover .visual {
        top: 0;
+
+       border-radius: 10px;
     }

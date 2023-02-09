@@ -2,17 +2,19 @@
 /* notes */
     /*
 
-            DA FARE:
+
             - responsive (nuovo branch):
                 -hamburger menu
                 -main (tweaks)
                 -shop (-ingrandisci la finestra per visualizzare-)
                 -info (tweaks)
 
-            EXTRA:
             - url /:id per selezione prod (con routing guard)
             - custom pipe testo finale in homepage
             - spinner form info (->response [true: valid; false; invalid]) guarda 102 CORSO
+
+            - btn select
+            - input effect
     */
 
 
@@ -22,6 +24,7 @@
     --ttuc: uppercase; /*text uppercase*/
     --fwb: bold; /*bold font*/
     --tc: center; /*center text*/
+    --img: 11em; /*img var*/
 }
 
 
@@ -40,6 +43,11 @@
         background-color: rgb(190, 180, 170);
         color: black;
     }
+
+
+
+
+
 
 /* effect */
 

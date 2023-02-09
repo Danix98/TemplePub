@@ -1,8 +1,4 @@
 
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-
 <h2 class="text-center pb-5">Shop</h2>
 
 <section class="row d-flex m-auto">
@@ -16,7 +12,7 @@
 
 
                     *ngFor="let drink of drinks">
-                    <div class="galleria mx-3">
+                    <div class="galleria mx-4">
                         <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
 
                         <div class="visual">
@@ -25,9 +21,9 @@
                     </div>
                     <div class="mt-2">
                         <button (click)="onLoadInfo(drink.imgpath, drink.description)"
-                                type="button" class="btn btn-outline-info me-1 ff">Vedi</button>
+                                type="button" class="btn btn-outline-info me-1">Vedi</button>
                         <button (click)="onLoadShop(drink.name, drink.price)"
-                                type="button" class="btn btn-outline-success ms-1 ff">Acquista</button>
+                                type="button" class="btn btn-outline-success ms-1">Acquista</button>
                     </div>
 
 
@@ -44,3 +40,7 @@
     <span class="empty"></span>
 
 </section>
+
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
