@@ -9,12 +9,11 @@
                 -shop (-ingrandisci la finestra per visualizzare-)
                 -info (tweaks)
 
-            - url /:id per selezione prod (con routing guard)
             - custom pipe testo finale in homepage
+            - url /:id per selezione prod (con routing guard) + nav btn
             - spinner form info (->response [true: valid; false; invalid]) guarda 102 CORSO
 
-            - btn select
-            - input effect
+            - subjects / input effect
     */
 
 

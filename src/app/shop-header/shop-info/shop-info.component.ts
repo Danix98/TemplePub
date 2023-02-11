@@ -15,13 +15,13 @@ export class ShopInfoComponent implements OnInit {
 
   drinks: Drink[];
 
-  imgStatus = this.DrinkService.status;
+  imgStatus = this.DrinkService.stStatus;
   descStatus = this.DrinkService.ndStatus;
 
   constructor(private DrinkService: DrinkService, private router_btn: Router) { }
 
   
-  ngOnInit() { this.drinks = this.DrinkService.getDrinks() }
+  ngOnInit() {  }
 
 
   onCancel() {

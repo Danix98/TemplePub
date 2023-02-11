@@ -16,20 +16,21 @@ export class ShopCartComponent implements OnInit {
   drinks: Drink[];
 
   limitQnt = 50;
+
+  qntFound: boolean = false;
   lPrice: number;
   nPrice: number;
-  
-  ngRemove: boolean;
 
-  nameStatus = this.DrinkService.status;
+  nameStatus = this.DrinkService.stStatus;
   priceStatus = this.DrinkService.ndStatus;
 
   constructor(private DrinkService: DrinkService, private router_btn: Router) { }
 
 
-  ngOnInit() { this.drinks = this.DrinkService.getDrinks() }
+  ngOnInit() {  }
  
   onCheckQnt(event: Event) {
+
     this.lPrice = +(<HTMLInputElement>event.target).value;
     this.nPrice = this.lPrice * +this.priceStatus;
 
@@ -41,16 +42,24 @@ export class ShopCartComponent implements OnInit {
   onBuy() {
     if(this.lPrice === undefined)
       alert("Impossibile effettuare l'acquisto");
+
     else {
-      alert("Pagamento effettuato: " + this.nPrice);
+      alert("Pagamento effettuato: € " + this.nPrice);
       this.router_btn.navigate(['shop']);
     }
   }
 
   onCancel() {
-    this.ngRemove = confirm('Sei sicuro di rimuovere il carrello? I dati andranno persi.')
+    let ngRemove: boolean;
 
-    if(this.ngRemove)
+
+    if(this.lPrice === undefined)
       this.router_btn.navigate(['shop']);
+
+    else {
+      ngRemove = confirm('Sei sicuro di rimuovere il carrello? I dati andranno persi.')
+      if(ngRemove)
+        this.router_btn.navigate(['shop']);
+    }
   }
 }

@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 
 import { Drink } from '../Drink.model';
 import { DrinkService } from '../Drink.service';
+import { DrinkDescService } from '../Drink-desc.service';
 
 @Component({
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
-  styleUrls: ['../shared/generics.css' ,'./shop-header.component.css']
+  styleUrls: ['../shared/generics.css' ,'./shop-header.component.css'],
+  providers: [DrinkService, DrinkDescService]
 })
 
 
@@ -21,19 +23,19 @@ export class ShopHeaderComponent implements OnInit {
 
 
   ngOnInit() { 
-    this.drinks = this.DrinkService.getDrinks();
+    this.drinks = this.DrinkService.getDrinks().slice();
   }
 
-  onLoadInfo(status, ndStatus) {
+  onLoadInfo<T>(stStatus: T, ndStatus: T) {
     this.router_btn.navigate(['shop/info']);
 
-    this.DrinkService.status = status;
+    this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
-
-  } onLoadShop(status, ndStatus) {
+    
+  } onLoadShop<T>(stStatus: T, ndStatus: T) {
     this.router_btn.navigate(['shop/cart']);
 
-    this.DrinkService.status = status;
+    this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
   }
 }
