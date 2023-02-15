@@ -17,7 +17,6 @@ export class ShopCartComponent implements OnInit {
 
   limitQnt = 50;
 
-  qntFound: boolean = false;
   lPrice: number;
   nPrice: number;
 

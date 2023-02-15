@@ -49,6 +49,12 @@ h5 {
     font-weight: var(--fwb);
 }
 
+.special_p::first-letter {
+    font-size: 300%;
+    text-transform: var(--ttuc);
+    font-weight: var(--fwb);
+}
+
 /*** ***/
 
 .shop_holder {
