@@ -15,5 +15,5 @@ export class FooterComponent {
   faTwitter = faTwitter;
   faFacebook = faFacebook;
 
-  constructor(public router: Router) {}
+  constructor( public router: Router ) { }
 }

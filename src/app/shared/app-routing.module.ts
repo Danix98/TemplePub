@@ -12,8 +12,8 @@ const appRoutes : Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: MainComponent },
     { path: 'shop', component: ShopHeaderComponent ,
-      children: [  { path: 'info', component: ShopInfoComponent },
-                  { path: 'cart', component: ShopCartComponent }
+      children: [  { path: 'info/:name', component: ShopInfoComponent },
+                  { path: 'cart/:name', component: ShopCartComponent }
                 ] },
     { path: 'info', component: InfoComponent },
     { path: '**', redirectTo: 'home' }

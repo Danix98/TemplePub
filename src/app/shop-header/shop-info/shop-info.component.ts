@@ -11,18 +11,18 @@ import { DrinkService } from '../../Drink.service';
   styleUrls: ['../../shared/generics.css', './shop-info.component.css']
 })
 
-export class ShopInfoComponent implements OnInit {
+export class ShopInfoComponent {
+
+  constructor(
+    private DrinkService: DrinkService,
+    private router_btn: Router) { }
 
   drinks: Drink[];
 
   imgStatus = this.DrinkService.stStatus;
   descStatus = this.DrinkService.ndStatus;
 
-  constructor(private DrinkService: DrinkService, private router_btn: Router) { }
-
   
-  ngOnInit() {  }
-
 
   onCancel() {
     this.router_btn.navigate(['shop']);

@@ -13,6 +13,10 @@ import { DrinkService } from '../../Drink.service';
 
 export class ShopCartComponent implements OnInit {
 
+  constructor(
+    private DrinkService: DrinkService,
+    private router_btn: Router) { }
+    
   drinks: Drink[];
 
   limitQnt = 50;
@@ -23,7 +27,6 @@ export class ShopCartComponent implements OnInit {
   nameStatus = this.DrinkService.stStatus;
   priceStatus = this.DrinkService.ndStatus;
 
-  constructor(private DrinkService: DrinkService, private router_btn: Router) { }
 
 
   ngOnInit() {  }

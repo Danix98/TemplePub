@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Drink } from '../Drink.model';
 import { DrinkService } from '../Drink.service';
@@ -17,25 +17,30 @@ import { DrinkDescService } from '../Drink-desc.service';
 export class ShopHeaderComponent implements OnInit {
 
   drinks: Drink[];
-
-
+  
   constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
 
-
-  ngOnInit() { 
+  ngOnInit() {
+ 
     this.drinks = this.DrinkService.getDrinks().slice();
   }
 
-  onLoadInfo<T>(stStatus: T, ndStatus: T) {
-    this.router_btn.navigate(['shop/info']);
+
+
+  onLoadInfo<T>(name: T, stStatus: T, ndStatus: T) {
+
+    this.router_btn.navigate(['shop/info', name],
+      { queryParams: {vedi: true} });
 
     this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
     
   } onLoadShop<T>(stStatus: T, ndStatus: T) {
-    this.router_btn.navigate(['shop/cart']);
+    this.router_btn.navigate(['shop/cart', stStatus],
+    { queryParams: {acquista: true} });
 
     this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
+
   }
 }
