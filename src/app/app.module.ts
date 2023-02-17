@@ -1,8 +1,9 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './shared/app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { ShortenPipe } from './shared/shorten.pipe';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FontAwesomeModule,
     AppRoutingModule,
     FormsModule,
