@@ -4,6 +4,14 @@
 
   <h2 class="text-center pb-2">Contattaci</h2>
 
+          <section *ngIf="isLoading">
+            <p class="text-center" style="text-transform: uppercase;">l'operazione può richiedere qualche secondo....</p>
+
+            <div class="loader"></div>
+          </section>
+
+          <app-alert [message]="error" *ngIf="error" (exit)="onClose()"></app-alert>
+
   <div class="row">
     <div class="col-md-6 m-auto">
 

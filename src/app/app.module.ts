@@ -16,6 +16,7 @@ import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
 import { ShortenPipe } from './shared/shorten.pipe';
+import { failForm } from './info/fail-form';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ShortenPipe } from './shared/shorten.pipe';
     ShopInfoComponent,
     ShopCartComponent,
     InfoComponent,
-    ShortenPipe
+    ShortenPipe,
+    failForm
   ],
   imports: [
     BrowserModule,
