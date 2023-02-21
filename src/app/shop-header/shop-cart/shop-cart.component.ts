@@ -46,12 +46,16 @@ export class ShopCartComponent implements OnInit {
     
   drinks: Drink[];
 
+  section: boolean = true;
+  sectionString: string;
+
   limitQnt = 50;
 
   lPrice: number;
   nPrice: number;
 
   effect = 'none';
+
   nameStatus = this.DrinkService.stStatus;
   priceStatus = this.DrinkService.ndStatus;
 
@@ -70,12 +74,14 @@ export class ShopCartComponent implements OnInit {
   }
 
   onBuy() {
-    if(this.lPrice === undefined)
-      alert("Impossibile effettuare l'acquisto");
+    this.section = false;
+
+    if(this.lPrice === undefined) {
+      this.sectionString = "Impossibile effettuare l'acquisto";
+    }
 
     else {
-      alert("Pagamento effettuato: € " + this.nPrice);
-      this.router_btn.navigate(['shop']);
+      this.sectionString = "Pagamento effettuato: € " + this.nPrice;
     }
   }
 
@@ -93,8 +99,11 @@ export class ShopCartComponent implements OnInit {
     }
   }
 
+  onExit() {
+    this.router_btn.navigate(['shop']);
+  }
+
   onEffect() {
     this.effect == 'none' ? this.effect = 'active' : this.effect = 'none';
   } 
 }
-

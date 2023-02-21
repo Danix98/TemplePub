@@ -18,17 +18,11 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.loadTime = Math.floor(Math.random() * 10) + 2;
+    this.loadTime = Math.floor(Math.random() * 8) + 2;
 
     this.sendMessage = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'messaggio': new FormControl(null, Validators.required)
-    });
-
-    this.sendMessage.valueChanges.subscribe({
-      next: (resData) => {
-        resData = this.onInoltro;
-      },
     });
 
   }
@@ -37,16 +31,31 @@ export class InfoComponent implements OnInit {
     this.isLoading = true;
     console.log(this.loadTime);
 
-    setTimeout(() => {
 
+    setTimeout(() => {
       if(this.sendMessage.controls['messaggio'].value.length < 10) {
+
+        this.sendMessage.controls['messaggio'].setErrors({'incorrect': true});
         this.error = 'Richiesta non inviata. Il messaggio deve contenere almeno 10 caratteri.';
-        console.log('Errore')
-      };
+
+        console.log('Errore');
+        // console.log(this.sendMessage);
+      } else {
+        this.sendMessage.valueChanges.subscribe({
+          next: (resData) => {
+            resData = this.onInoltro;
+          },
+        });
+
+        setTimeout(() => {
+          this.sendMessage.reset();
+        }, 3000)
+        
+        console.log(this.sendMessage);
+      }
 
       this.isLoading = false;
     
-      console.log(this.sendMessage);
       // console.log(this.sendMessage.value);
 
     }, this.loadTime*1000)

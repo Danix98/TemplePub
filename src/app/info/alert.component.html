@@ -3,7 +3,7 @@
 
         <div class="backdrop" (click)="onClose()"></div>
 
-        <div class="alert-box">
+        <div [@alertState] class="alert-box">
             <h1 class="text-center">Errore.</h1>
             <p>{{ message }}</p>
 

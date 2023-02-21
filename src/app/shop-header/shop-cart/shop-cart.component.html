@@ -4,62 +4,71 @@
 <span class="empty"></span>
 
 <form class="shop_holder">
+
+    <div *ngIf="section === true"> <!-- static -->
+        <div class="row"> <!--labels-->
+            <div class="col-md-9 m-auto">
     
-    <div class="row"> <!--labels-->
-        <div class="col-md-9 m-auto">
-
-            <label
-                for="name"
-                class="form-label">Prodotto Selezionato:</label>
-            <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="{{ nameStatus }}"
-            aria-describedby="emailHelp"
-            readonly>
-
-            <br>
-
-            <div class="m-auto" style="width: 30%;">
                 <label
-                    for="amount"
-                    class="form-label ms-4">Quantità</label>
+                    for="name"
+                    class="form-label">Prodotto Selezionato:</label>
                 <input
-                    (click)="onEffect()"
-                    type="number"
-                    class="form-control"
-                    id="amount"
-                    min="1"
-                    max="{{ limitQnt }}"
-                    placeholder="...."
-                    (input)="onCheckQnt($event)"
-                    aria-describedby="emailHelp">
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="{{ nameStatus }}"
+                aria-describedby="emailHelp"
+                readonly>
+    
+                <br>
+    
+                <div class="m-auto" style="width: 30%;">
+                    <label
+                        for="amount"
+                        class="form-label ms-4">Quantità</label>
+                    <input
+                        (click)="onEffect()"
+                        type="number"
+                        class="form-control"
+                        id="amount"
+                        min="1"
+                        max="{{ limitQnt }}"
+                        placeholder="...."
+                        (input)="onCheckQnt($event)"
+                        aria-describedby="emailHelp">
+                </div>
+    
+                <br>
+    
+                <label
+                for="name"
+                class="form-label">Prezzo:</label>
+                <input
+                [@inputState]= "effect"
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="€ {{ nPrice }}"
+                aria-describedby="emailHelp"
+                readonly>
+    
             </div>
-
-            <br>
-
-            <label
-            for="name"
-            class="form-label">Prezzo:</label>
-            <input
-            [@inputState]= "effect"
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="€ {{ nPrice }}"
-            aria-describedby="emailHelp"
-            readonly>
-
         </div>
+
+        
+            <br><br>
+        
+            <div class="row"> <!--buttons-->
+                <div class="col-md-9 m-auto">
+                    <button (click)="onCancel()" type="button" class="btn btn-danger">Cancella</button>
+                    <button (click)="onBuy()" type="button" class="btn btn-light">Paga</button>
+                </div>
+            </div>
     </div>
 
-    <br><br>
-
-    <div class="row"> <!--buttons-->
-        <div class="col-md-9 m-auto">
-            <button (click)="onCancel()" type="button" class="btn btn-danger">Cancella</button>
-            <button (click)="onBuy()" type="button" class="btn btn-light">Paga</button>
-        </div>
+    <div class="alert alert-warning" *ngIf="section === false"> <!-- dynamic -->
+        <p>{{ sectionString }}</p>
+        <button (click)="onExit()" type="button" class="btn btn-warning">Esci</button>
     </div>
+    
 </form>

@@ -38,7 +38,7 @@
 
     <div *ngIf="shorten; else notShorten" class="row justify-content-center my-5">
         <div (click)="onShorten()"
-            class="col-md-5 mx-1 special_p" style="cursor: pointer">
+            class="col-md-5 mx-1 special_p" style="border-style: outset; cursor: pointer">
             <p>{{ text_fiv | shorten:110 }}
                 <span style="font-size: 1.5em; font-weight: bold;">...</span>
             </p>
@@ -46,7 +46,9 @@
     </div>
             <ng-template #notShorten>
                 <div class="row justify-content-center my-5">
-                    <div class="col-md-5 mx-1 special_p"> <p>{{ text_fiv }}</p> </div>
+                    <div
+                        class="col-md-5 mx-1 special_p" style="border-style: inset">
+                        <p>{{ text_fiv }}</p> </div>
                 </div>
             </ng-template>
 

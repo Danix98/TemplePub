@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Drink } from '../Drink.model';
 import { DrinkService } from '../Drink.service';
@@ -29,18 +29,26 @@ export class ShopHeaderComponent implements OnInit {
 
   onLoadInfo<T>(name: T, stStatus: T, ndStatus: T) {
 
+    this.DrinkService.stStatus = stStatus;
+    this.DrinkService.ndStatus = ndStatus;
+
+    this.router_btn.navigate(['shop']);
+
+    setTimeout(() => {
     this.router_btn.navigate(['shop/info', name],
       { queryParams: {vedi: true} });
-
-    this.DrinkService.stStatus = stStatus;
-    this.DrinkService.ndStatus = ndStatus;
+    }, 50)
     
   } onLoadShop<T>(stStatus: T, ndStatus: T) {
-    this.router_btn.navigate(['shop/cart', stStatus],
-    { queryParams: {acquista: true} });
-
+    
     this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
 
+    this.router_btn.navigate(['shop']);
+
+    setTimeout(() => {
+    this.router_btn.navigate(['shop/cart', stStatus],
+      { queryParams: {vedi: true} });
+    }, 50)
   }
 }

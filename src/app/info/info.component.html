@@ -29,13 +29,14 @@
 
         <span *ngIf="!sendMessage.get('messaggio').valid && sendMessage.get('messaggio').touched"
           class="form-label" style="color: red; font-weight: bold;">
-          Nessun messaggio inserito</span>
+          Messaggio non accettato</span>
         <br>
 
         <div style="float: right;">
           <button
           (click) ="onInoltro()"
           *ngIf="sendMessage.valid"
+          [disabled] = "isLoading"
           type="submit"
           class="btn btn-light" style="text-transform: uppercase;">
           Grazie per il tuo contributo! </button>
