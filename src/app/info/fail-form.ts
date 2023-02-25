@@ -28,6 +28,7 @@ import {
 
 
 export class failForm {
+
     @Input() message: string;
     @Output() exit = new EventEmitter<void>();
 

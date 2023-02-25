@@ -4,20 +4,25 @@
 
   <h2 class="text-center pb-2">Contattaci</h2>
 
+  <br>
+
+  <!-- SPINNER -->
           <section *ngIf="isLoading">
             <p class="text-center" style="text-transform: uppercase;">l'operazione può richiedere qualche secondo....</p>
 
             <div class="loader"></div>
           </section>
 
-          <app-alert [message]="error" *ngIf="error" (exit)="onClose()"></app-alert>
+  <!-- FRONTEND ERROR -->
+          <div *ngIf="errorFront">
+            <app-alert [message]="errorFront" (exit)="onClose()"></app-alert>
+          </div>
 
   <div class="row">
     <div class="col-md-6 m-auto">
 
       <form [formGroup]="sendMessage">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">E-mail:</label>
           <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
 
           <span *ngIf="!sendMessage.get('email').valid && sendMessage.get('email').touched"
@@ -42,10 +47,19 @@
           Grazie per il tuo contributo! </button>
         </div>
       </form>
-
+      
     </div>
   </div>
 
+  <br>
+
+  <!-- BACKEND ERROR -->
+          <div *ngIf="errorBack" class="row">
+            <div class="col-md-6 m-auto alert alert-danger">
+              <p style="font-size: 50px"> {{ errorBack }} </p>
+            </div>
+          </div>
+          
   <span class="empty"></span>
 </section>
 

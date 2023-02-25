@@ -8,6 +8,8 @@ import { DrinkDescService } from "./Drink-desc.service";
 
 export class DrinkService {
 
+  constructor(private drinkdescService: DrinkDescService) { }
+
   private drinks: Drink[] = [
     new Drink("birra", this.drinkdescService.descUno, '../../assets/img/birra1.jpg', 10),
     new Drink("seconda birra", this.drinkdescService.descDue, '../../assets/img/birra2.jpg', 19),
@@ -16,9 +18,6 @@ export class DrinkService {
     new Drink("secondo drink", this.drinkdescService.descCin, '../../assets/img/l2.jpg', 120),
     new Drink("terzo drink", this.drinkdescService.descSei, '../../assets/img/l3.jpg', 150)
   ];
-
-  constructor(private drinkdescService: DrinkDescService) {}
-
 
   stStatus: any; //string|number - (se 'number' => Drink[] togliere la pipe html 'uppercase')
   ndStatus: any; //string|number - (se 'number' => Drink[] togliere la pipe html 'uppercase')

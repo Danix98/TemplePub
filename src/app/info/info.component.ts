@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,22 +10,30 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 
 
+
 export class InfoComponent implements OnInit {
 
   sendMessage: FormGroup;
-  isLoading = false; 
-  loadTime: number;
-  error: string = null;
+  
+
+  isLoading: boolean;
+  loadTime: number = Math.floor(Math.random() * 8) + 2;
+
+  mypost = null;
+  formChar: number = 5;
+
+  errorFront: string = null;
+  errorBack: string = null;
+
+  constructor( private http: HttpClient ) { }
 
   ngOnInit() {
-
-    this.loadTime = Math.floor(Math.random() * 8) + 2;
-
     this.sendMessage = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'messaggio': new FormControl(null, Validators.required)
     });
 
+    this.isLoading = false;
   }
 
   onInoltro() {
@@ -33,36 +42,43 @@ export class InfoComponent implements OnInit {
 
 
     setTimeout(() => {
-      if(this.sendMessage.controls['messaggio'].value.length < 10) {
 
-        this.sendMessage.controls['messaggio'].setErrors({'incorrect': true});
-        this.error = 'Richiesta non inviata. Il messaggio deve contenere almeno 10 caratteri.';
+      //FRONTEND ERROR
+      if(this.sendMessage.controls['messaggio'].value.length < this.formChar) {
+        this.errorBack = null;
 
-        console.log('Errore');
-        // console.log(this.sendMessage);
+        this.sendMessage.controls['messaggio'].setErrors({'incorrect': true}); //form invalid
+        this.errorFront =
+        'Richiesta non inviata. Il messaggio deve contenere almeno ' + this.formChar + ' caratteri.';
+
       } else {
-        this.sendMessage.valueChanges.subscribe({
-          next: (resData) => {
-            resData = this.onInoltro;
+
+        //HTTP REQUEST
+        this.http
+        .post('https://templepub-eb4ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json', this.sendMessage.value, { headers: new HttpHeaders({'Form-Header': 'Contributo Da Utente'}) })
+        .subscribe({
+          next: (post) => {
+            this.mypost = post;
+            // console.log(post);
+            // console.log(this.sendMessage);
+            return this.mypost;
           },
+          error: (err) => {
+            this.errorBack = err.status + ' ' + err.statusText;
+          },
+          complete: () => {
+            this.errorBack = null;
+            this.sendMessage.reset();
+          }
         });
 
-        setTimeout(() => {
-          this.sendMessage.reset();
-        }, 3000)
-        
-        console.log(this.sendMessage);
       }
-
       this.isLoading = false;
-    
-      // console.log(this.sendMessage.value);
 
     }, this.loadTime*1000)
   };
 
   onClose() {
-    this.error = null;
+    this.errorFront = null;
   }
-  
 }
