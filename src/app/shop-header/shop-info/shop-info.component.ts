@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Drink } from '../../Drink.model';
@@ -11,20 +11,21 @@ import { DrinkService } from '../../Drink.service';
   styleUrls: ['../../shared/generics.css', './shop-info.component.css']
 })
 
+
+
 export class ShopInfoComponent {
-
-  constructor(
-    private DrinkService: DrinkService,
-    private router_btn: Router) { }
-
+  
   drinks: Drink[];
-
+  
   imgStatus = this.DrinkService.stStatus;
   descStatus = this.DrinkService.ndStatus;
-
   
+  constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
+  
+
 
   onCancel() {
     this.router_btn.navigate(['shop']);
   }
+  
 }

@@ -11,7 +11,9 @@ import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
 })
 
 
+
 export class FooterComponent {
+  
   faTwitter = faTwitter;
   faFacebook = faFacebook;
 

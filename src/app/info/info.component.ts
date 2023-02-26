@@ -15,7 +15,6 @@ export class InfoComponent implements OnInit {
 
   sendMessage: FormGroup;
   
-
   isLoading: boolean;
   loadTime: number = Math.floor(Math.random() * 8) + 2;
 
@@ -27,6 +26,8 @@ export class InfoComponent implements OnInit {
 
   constructor( private http: HttpClient ) { }
 
+
+
   ngOnInit() {
     this.sendMessage = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -37,9 +38,9 @@ export class InfoComponent implements OnInit {
   }
 
   onInoltro() {
+
     this.isLoading = true;
     console.log(this.loadTime);
-
 
     setTimeout(() => {
 
@@ -81,4 +82,5 @@ export class InfoComponent implements OnInit {
   onClose() {
     this.errorFront = null;
   }
+
 }

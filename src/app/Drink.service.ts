@@ -4,11 +4,13 @@ import { Injectable } from "@angular/core";
 import { Drink } from "./Drink.model";
 import { DrinkDescService } from "./Drink-desc.service";
 
-@Injectable()
 
+
+@Injectable()
 export class DrinkService {
 
-  constructor(private drinkdescService: DrinkDescService) { }
+  stStatus: any; //string|number - (se 'number' => Drink[] togliere la pipe html 'uppercase')
+  ndStatus: any; //string|number - (se 'number' => Drink[] togliere la pipe html 'uppercase')
 
   private drinks: Drink[] = [
     new Drink("birra", this.drinkdescService.descUno, '../../assets/img/birra1.jpg', 10),
@@ -19,8 +21,9 @@ export class DrinkService {
     new Drink("terzo drink", this.drinkdescService.descSei, '../../assets/img/l3.jpg', 150)
   ];
 
-  stStatus: any; //string|number - (se 'number' => Drink[] togliere la pipe html 'uppercase')
-  ndStatus: any; //string|number - (se 'number' => Drink[] togliere la pipe html 'uppercase')
+  constructor( private drinkdescService: DrinkDescService ) { }
+
+
 
   getDrinks = () => {
     return this.drinks;

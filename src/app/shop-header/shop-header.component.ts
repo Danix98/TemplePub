@@ -14,6 +14,7 @@ import { DrinkDescService } from '../Drink-desc.service';
 })
 
 
+
 export class ShopHeaderComponent implements OnInit {
 
   drinks: Drink[];
@@ -21,7 +22,6 @@ export class ShopHeaderComponent implements OnInit {
   constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
 
   ngOnInit() {
- 
     this.drinks = this.DrinkService.getDrinks().slice();
   }
 
@@ -51,4 +51,5 @@ export class ShopHeaderComponent implements OnInit {
       { queryParams: {vedi: true} });
     }, 50)
   }
+  
 }

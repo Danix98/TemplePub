@@ -1,12 +1,12 @@
 
 export class Drink {
 
-    name: string|number; //cart
-    description: string; //info
     imgpath: string; //info
+    description: string; //info
+    name: string|number; //cart
     price: number; //cart
 
-    constructor (name: string|number, description: string, imgpath: string, price: number) {
+    constructor ( name: string|number, description: string, imgpath: string, price: number ) {
         this.name = name;
         this.description = description;
         this.imgpath = imgpath;
