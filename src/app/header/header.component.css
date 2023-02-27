@@ -8,3 +8,15 @@
     background-attachment: fixed;
     background-size: cover;
 }
+
+#desktop_h1 {
+    display: block;
+}
+
+
+
+@media (min-width: 480px) and (max-width: 767px){
+    #desktop_h1 {
+        display: none;
+    }
+}
