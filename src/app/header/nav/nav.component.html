@@ -1,20 +1,18 @@
 
 <nav class="navbar navbar-expand-lg bg-light fixed-top">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <!-- <span class="navbar-toggler-icon"></span> -->
 
-<!--       
-      <li class="burger" (click)="toggleMenu()">
-        <i class="material-icons"> {{ isMenuOpen ? "close" : "menu" }} </i>
-      </li>
-      <li class="menu" [class.is-open]="isMenuOpen">
-        <a class="menu-item" href="">Shop</a>
-        <a class="menu-item" href="">Find Us</a>
-      </li>
-
- -->
+    <button class="btn_border" type="button" (click)="toggleMenu()"> 
+      <i class="material-icons"> {{ isMenuOpen ? "close" : "menu" }} </i> <!--angular material-->
+      <div class="menu" [class.is_open]="isMenuOpen">
+        <a class="menu-item" routerLink="/shop"
+          style="text-decoration: none; color: black;">Shop</a>
+          <hr>
+        <a class="menu-item" routerLink="/info"
+          style="text-decoration: none; color: black;">Find Us</a>
+      </div>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a routerLinkActive="active"
@@ -26,6 +24,6 @@
             class="nav-link" routerLink="/info">Find Us</a>
       </div>
     </div>
-    <a class="nav-link" id="desktop_a" aria-current="page" routerLink="/home">The Temple Pub</a>
+    <a class="nav-link" id="desktop_info" aria-current="page" routerLink="/home">The Temple Pub</a>
   </div>
 </nav>

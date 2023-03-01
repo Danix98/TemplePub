@@ -1,24 +1,41 @@
 
+.btn_border {
+    background-color: transparent;
+    border: 3px solid #cccccc;
+}
+
 nav a:after {
     content: '';
 
     display:block;
     border-bottom: solid 3px rgba(0, 0, 0, 0.2);
-    transform: scaleX(0);  
+    transform: scaleX(0);
     transition: transform 250ms ease-in-out;
     
 }   nav a:hover:after {
         transform: scaleX(1);
 }
 
-#desktop_a {
+#desktop_info, .btn_border, .menu {
     display: none;
 }
 
 
 
-@media (min-width: 480px) and (max-width: 767px){
-    #desktop_a {
+@media (min-width: 480px) and (max-width: 1023px) {
+    
+    #desktop_info, .btn_border {
         display: block;
     }
+
+    .is_open {
+        display: block;
+        width: 35%;
+
+        position: absolute;
+
+        background-color: #fff;
+        padding: 10px;
+    }
+
 }
