@@ -2,8 +2,19 @@
         <div class="backdrop" (click)="onClose()"></div>
 
         <div [@alertState] class="alert-box">
-            <h1 class="text-center">Errore.</h1>
-            <p>{{ message }}</p>
+
+<!-- 
+
+            <div *ngIf="isShop">
+                <h1 class="text-center">Ingrandisci la finestra per visualizzarne il contenuto.</h1>
+            </div>
+
+            <div *ngIf="isForm">
+                <h1 class="text-center">Errore.</h1>
+                <p>{{ message }}</p>
+            </div>
+
+ -->
 
             <div class="alert-box-action">
                 <button class="btn btn-primary px-5" (click)="onClose()">OK</button>

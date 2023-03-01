@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 
 
 
-export class NavComponent { }
+export class NavComponent {
+
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+}
