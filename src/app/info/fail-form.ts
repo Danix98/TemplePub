@@ -27,11 +27,9 @@ import {
 
 
 
-export class AlertComponent {
+export class failForm {
 
     @Input() message: string;
-    @Input() isForm: string;
-    @Input() isShop: string;
     @Output() exit = new EventEmitter<void>();
 
     onClose() {

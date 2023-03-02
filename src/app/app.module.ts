@@ -17,7 +17,7 @@ import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
 import { ShortenPipe } from './shared/shorten.pipe';
-import { AlertComponent } from './shared/alert/alert.component';
+import { failForm } from './info/fail-form';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { AlertComponent } from './shared/alert/alert.component';
     ShopCartComponent,
     InfoComponent,
     ShortenPipe,
-    AlertComponent
+    failForm
   ],
   imports: [
     BrowserModule,
