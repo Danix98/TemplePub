@@ -83,4 +83,11 @@ export class InfoComponent implements OnInit {
     this.errorFront = null;
   }
 
+  getPost() {
+    this.http.get('https://templepub-eb4ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
+      .subscribe(posts => {
+        console.log(posts)
+      })
+  }
+
 }
