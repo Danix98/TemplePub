@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-info',
@@ -14,12 +15,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class InfoComponent implements OnInit {
 
   sendMessage: FormGroup;
+  postArray = [];
   
   isLoading: boolean;
-  loadTime: number = Math.floor(Math.random() * 8) + 2;
+  loadTime: number = Math.floor(Math.random() * 8) + 2; //10s
 
-  mypost = null;
   formChar: number = 5;
+  mypost = null;
 
   errorFront: string = null;
   errorBack: string = null;
@@ -79,15 +81,28 @@ export class InfoComponent implements OnInit {
     }, this.loadTime*1000)
   };
 
+  getPost() {
+    this.http
+    .get('https://templepub-eb4ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
+    .pipe(map(responseData => {
+
+      const createArray = [];
+
+      for(const k in responseData) {
+        if(responseData.hasOwnProperty(k)) {
+          createArray.push( {...responseData[k], id: k} )
+        }
+      }
+      return createArray;
+
+    }))
+    .subscribe(postArray => {
+      this.postArray = postArray;
+    })
+  }
+  
   onClose() {
     this.errorFront = null;
-  }
-
-  getPost() {
-    this.http.get('https://templepub-eb4ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
-      .subscribe(posts => {
-        console.log(posts)
-      })
   }
 
 }
