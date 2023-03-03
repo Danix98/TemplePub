@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs';
 
+import { DrinkDescService } from '../Drink-desc.service';
+
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -15,7 +17,6 @@ import { map } from 'rxjs';
 export class InfoComponent implements OnInit {
 
   sendMessage: FormGroup;
-  postArray = [];
   
   isLoading: boolean;
   loadTime: number = Math.floor(Math.random() * 8) + 2; //10s
@@ -26,7 +27,7 @@ export class InfoComponent implements OnInit {
   errorFront: string = null;
   errorBack: string = null;
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, private DrinkDescService: DrinkDescService ) { }
 
 
 
@@ -35,6 +36,8 @@ export class InfoComponent implements OnInit {
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'messaggio': new FormControl(null, Validators.required)
     });
+
+    this.getPost();
 
     this.isLoading = false;
   }
@@ -97,7 +100,7 @@ export class InfoComponent implements OnInit {
 
     }))
     .subscribe(postArray => {
-      this.postArray = postArray;
+      this.DrinkDescService.postArray = postArray;
     })
   }
   

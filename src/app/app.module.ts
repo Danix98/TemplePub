@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from './material/material.module';
 
 import { AppRoutingModule } from './shared/app-routing.module';
+import { DrinkDescService } from './Drink-desc.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
@@ -18,6 +19,7 @@ import { ShopHeaderComponent } from './shop-header/shop-header.component';
 import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
+import { TableComponent } from './material/table/table.component';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { failForm } from './info/fail-form';
 
@@ -32,6 +34,7 @@ import { failForm } from './info/fail-form';
     ShopInfoComponent,
     ShopCartComponent,
     InfoComponent,
+    TableComponent,
     ShortenPipe,
     failForm
   ],
@@ -45,7 +48,7 @@ import { failForm } from './info/fail-form';
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [DrinkDescService],
   bootstrap: [AppComponent]
 })
 

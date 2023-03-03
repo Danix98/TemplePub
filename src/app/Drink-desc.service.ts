@@ -18,4 +18,6 @@ export class DrinkDescService {
 
     descSei: string =
         "Qui voluptatibus impedit sit, expedita adipisci numquam facere minima mollitia quis laborum dicta voluptas tenetur dolor inventore doloremque, veritatis maxime illum? Aliquam quo quam voluptates totam optio? Tempore, molestiae necessitatibus.";
+
+    postArray = [];
 }
