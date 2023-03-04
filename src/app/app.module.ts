@@ -9,7 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from './material/material.module';
 
 import { AppRoutingModule } from './shared/app-routing.module';
-import { DrinkDescService } from './Drink-desc.service';
+import { RequestService } from './request.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
@@ -48,7 +48,7 @@ import { failForm } from './info/fail-form';
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [DrinkDescService],
+  providers: [RequestService],
   bootstrap: [AppComponent]
 })
 

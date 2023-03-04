@@ -10,7 +10,7 @@ import { DrinkDescService } from '../Drink-desc.service';
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
   styleUrls: ['../shared/generics.css' ,'./shop-header.component.css'],
-  providers: [DrinkService]
+  providers: [DrinkService, DrinkDescService]
 })
 
 

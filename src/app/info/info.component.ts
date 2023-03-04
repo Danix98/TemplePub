@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs';
 
-import { DrinkDescService } from '../Drink-desc.service';
+import { RequestService } from '../request.service';
 
 @Component({
   selector: 'app-info',
@@ -27,7 +27,7 @@ export class InfoComponent implements OnInit {
   errorFront: string = null;
   errorBack: string = null;
 
-  constructor( private http: HttpClient, private DrinkDescService: DrinkDescService ) { }
+  constructor( private http: HttpClient, private RequestService: RequestService ) { }
 
 
 
@@ -85,22 +85,21 @@ export class InfoComponent implements OnInit {
   };
 
   getPost() {
+    
     this.http
     .get('https://templepub-eb4ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
     .pipe(map(responseData => {
 
-      const createArray = [];
-
       for(const k in responseData) {
         if(responseData.hasOwnProperty(k)) {
-          createArray.push( {...responseData[k], id: k} )
+          this.RequestService.getArray.push( {id: k, ...responseData[k]} );
         }
       }
-      return createArray;
+      return this.RequestService.getArray;
 
     }))
     .subscribe(postArray => {
-      this.DrinkDescService.postArray = postArray;
+      // console.log(postArray)
     })
   }
   
