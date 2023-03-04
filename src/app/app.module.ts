@@ -9,7 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from './material/material.module';
 
 import { AppRoutingModule } from './shared/app-routing.module';
-import { RequestService } from './request.service';
+import { RequestService } from './material/table/table_ref/request.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
