@@ -2,9 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { map } from 'rxjs';
-
-import { RequestService } from '../material/table/table_ref/request.service';
 
 @Component({
   selector: 'app-info',
@@ -17,6 +14,7 @@ import { RequestService } from '../material/table/table_ref/request.service';
 export class InfoComponent implements OnInit {
 
   sendMessage: FormGroup;
+
   
   isLoading: boolean;
   loadTime: number = Math.floor(Math.random() * 8) + 2; //10s
@@ -27,7 +25,7 @@ export class InfoComponent implements OnInit {
   errorFront: string = null;
   errorBack: string = null;
 
-  constructor( private http: HttpClient, private RequestService: RequestService ) { }
+  constructor( private http: HttpClient ) { }
 
 
 
@@ -36,8 +34,6 @@ export class InfoComponent implements OnInit {
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'messaggio': new FormControl(null, Validators.required)
     });
-
-    this.getPost();
 
     this.isLoading = false;
   }
@@ -83,28 +79,9 @@ export class InfoComponent implements OnInit {
 
     }, this.loadTime*1000)
   };
-
-  getPost() {
-    
-    this.http
-    .get('https://templepub-eb4ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
-    .pipe(map(responseData => {
-
-      for(const k in responseData) {
-        if(responseData.hasOwnProperty(k)) {
-          this.RequestService.getArray.push( {id: k, ...responseData[k]} );
-        }
-      }
-      return this.RequestService.getArray;
-
-    }))
-    .subscribe(postArray => {
-      // console.log(postArray)
-    })
-  }
   
   onClose() {
     this.errorFront = null;
-  }
+  };
 
 }

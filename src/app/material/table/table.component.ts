@@ -1,7 +1,6 @@
 
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
 
 import { RequestService } from './table_ref/request.service';
 
@@ -15,11 +14,9 @@ import { RequestService } from './table_ref/request.service';
 
 export class TableComponent implements AfterViewInit {
 
-    ELEMENT_DATA: Element[] = this.RequestService.getArray;
-
     displayCol: string[] = ['email', 'messaggio'];
-    dataSource = new MatTableDataSource<Element>(this.ELEMENT_DATA);
-
+    data = this.RequestService.dataSource;
+    
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
     constructor( private RequestService: RequestService ) { }
@@ -27,7 +24,7 @@ export class TableComponent implements AfterViewInit {
 
 
     ngAfterViewInit() {
-        this.dataSource.paginator = this.paginator;
+        this.RequestService.dataSource.paginator = this.paginator;
     }
 
 }
