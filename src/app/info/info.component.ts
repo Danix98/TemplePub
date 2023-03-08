@@ -1,7 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { RequestService } from '../material/table/table_ref/request.service';
 
 @Component({
   selector: 'app-info',
@@ -19,13 +22,13 @@ export class InfoComponent implements OnInit {
   isLoading: boolean;
   loadTime: number = Math.floor(Math.random() * 8) + 2; //10s
 
-  formChar: number = 10;
+  formChar: number = 5;
   mypost = null;
 
   errorFront: string = null;
   errorBack: string = null;
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, private RequestService: RequestService, private router: Router ) { }
 
 
 
@@ -71,6 +74,12 @@ export class InfoComponent implements OnInit {
           complete: () => {
             this.errorBack = null;
             this.sendMessage.reset();
+
+            this.RequestService.getPost();
+              this.router.navigate(['/home']);
+                setTimeout(() => {
+                  this.router.navigate(['/info']);
+                }, 1000)
           }
         });
 
