@@ -19,7 +19,7 @@ export class InfoComponent implements OnInit {
   isLoading: boolean;
   loadTime: number = Math.floor(Math.random() * 8) + 2; //10s
 
-  formChar: number = 5;
+  formChar: number = 10;
   mypost = null;
 
   errorFront: string = null;
