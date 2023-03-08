@@ -18,6 +18,8 @@ export class RequestService {
     ELEMENT_DATA: Element[]; //[.... , ..... | .... , ..... | ..etc]
     dataSource: any;
 
+    postReq_load: boolean = true;
+
     getPost() {
     
         this.http

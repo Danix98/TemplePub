@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -34,14 +34,14 @@ import { DrinkService } from '../../Drink.service';
 
 
 
-export class ShopCartComponent implements OnInit {
+export class ShopCartComponent {
   
   drinks: Drink[];
   
   nameStatus = this.DrinkService.stStatus;
   priceStatus = this.DrinkService.ndStatus;
 
-  section: boolean = true;
+  section: boolean = true; //payment
   sectionString: string;
   
   limitQnt = 50;
@@ -53,35 +53,28 @@ export class ShopCartComponent implements OnInit {
   constructor(
     private DrinkService: DrinkService,
     private router_btn: Router,
-    private element: BrowserAnimationsModule) { }
+    private BrowserAnimationsModule: BrowserAnimationsModule ) { }
 
 
 
-  ngOnInit() {  }
- 
   onCheckQnt(event: Event) {
-
     this.lPrice = +(<HTMLInputElement>event.target).value;
     this.nPrice = this.lPrice * +this.priceStatus;
 
     if(this.lPrice > this.limitQnt || this.lPrice <1)
       return (this.nPrice = undefined)
-
   }
 
   onBuy() {
-
     this.section = false;
 
     if(this.lPrice === undefined)
       this.sectionString = "Impossibile effettuare l'acquisto";
     else
       this.sectionString = "Pagamento effettuato: € " + this.nPrice;
-
   }
 
   onCancel() {
-
     let ngRemove: boolean;
 
     if(this.lPrice === undefined)
@@ -91,7 +84,6 @@ export class ShopCartComponent implements OnInit {
       if(ngRemove)
         this.router_btn.navigate(['shop']);
     }
-
   }
 
   onExit() {

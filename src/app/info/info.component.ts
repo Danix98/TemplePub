@@ -16,19 +16,23 @@ import { RequestService } from '../material/table/table_ref/request.service';
 
 export class InfoComponent implements OnInit {
 
+//FORM: REACTIVE
   sendMessage: FormGroup;
 
   
   isLoading: boolean;
-  loadTime: number = Math.floor(Math.random() * 8) + 2; //10s
+  loadTime: number = Math.floor(Math.random() * 8) + 2; //min 2s, max 10s
 
-  formChar: number = 5;
+  formChar: number = 10;
   mypost = null;
 
   errorFront: string = null;
   errorBack: string = null;
 
-  constructor( private http: HttpClient, private RequestService: RequestService, private router: Router ) { }
+  constructor(
+    private http: HttpClient,
+    private RequestService: RequestService,
+    private router: Router ) { }
 
 
 
@@ -72,14 +76,17 @@ export class InfoComponent implements OnInit {
             this.errorBack = err.status + ' ' + err.statusText;
           },
           complete: () => {
-            this.errorBack = null;
             this.sendMessage.reset();
 
+            this.errorBack = null;
+            this.RequestService.postReq_load = false;
+            
             this.RequestService.getPost();
               this.router.navigate(['/home']);
                 setTimeout(() => {
                   this.router.navigate(['/info']);
-                }, 1000)
+                  this.RequestService.postReq_load = true;
+                }, 1500)
           }
         });
 

@@ -26,5 +26,4 @@ export class TableComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.RequestService.dataSource.paginator = this.paginator;
     }
-
 }
