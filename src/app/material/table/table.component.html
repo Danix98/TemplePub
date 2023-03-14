@@ -4,18 +4,22 @@
   <tr mat-header-row *matHeaderRowDef="displayCol"></tr>
   <tr mat-row *matRowDef="let row; columns: displayCol;"></tr>
   
+
+
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef> EMAIL </th>
-    <td mat-cell *matCellDef="let record"> {{record.email}} </td>
+    <td mat-cell *matCellDef="let record"> <br> {{record.email}} <br><br> </td>
   </ng-container>
 
   <ng-container matColumnDef="messaggio">
     <th mat-header-cell *matHeaderCellDef> MESSAGGIO </th>
-    <td mat-cell *matCellDef="let record"> {{record.messaggio}} </td>
+    <td mat-cell *matCellDef="let record"> <br> {{record.messaggio}} <br><br> </td>
   </ng-container>
 
 </table>
   
-<mat-paginator [pageSizeOptions]="[5, 10]"
+<mat-paginator [pageSizeOptions]="items_xpage"
                 showFirstLastButtons>
 </mat-paginator>
+
+<br><br>

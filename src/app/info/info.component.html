@@ -3,6 +3,7 @@
   <br>
 
   <h2 class="text-center pb-2">Contattaci</h2>
+  <p class="text-center">Se l'operazione andrà a buon fine il tuo messaggio comparirà in tabella!</p>
 
   <br>
 
@@ -25,14 +26,14 @@
 
       <form [formGroup]="sendMessage">
         <div class="mb-3">
-          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcde@mail.it">
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [readonly] = "isLoading" placeholder="abcde@mail.it">
 
           <span *ngIf="!sendMessage.get('email').valid && sendMessage.get('email').touched"
           class="form-label" style="color: red; font-weight: bold;">
           Inserisci una mail valida!</span>
         </div>
 
-        <textarea formControlName="messaggio" class="form-control" placeholder="Il tuo messaggio" style="height: 5em"></textarea>
+        <textarea formControlName="messaggio" class="form-control" style="height: 5em" [readonly] = "isLoading" placeholder="Il tuo messaggio"></textarea>
 
         <span *ngIf="!sendMessage.get('messaggio').valid && sendMessage.get('messaggio').touched"
           class="form-label" style="color: red; font-weight: bold;">

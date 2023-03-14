@@ -72,10 +72,16 @@ export class InfoComponent implements OnInit {
             // console.log(this.sendMessage);
             return this.mypost;
           },
+          
+          //BACKEND ERROR
           error: (err) => {
+            console.log('non autorizzato');
+
             this.errorBack = err.status + ' ' + err.statusText;
           },
           complete: () => {
+            console.log('operazione riuscita');
+
             this.sendMessage.reset();
 
             this.errorBack = null;
@@ -99,5 +105,4 @@ export class InfoComponent implements OnInit {
   onClose() {
     this.errorFront = null;
   };
-
 }

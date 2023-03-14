@@ -15,7 +15,7 @@ export class RequestService {
 
 
 
-    ELEMENT_DATA: Element[]; //[.... , ..... | .... , ..... | ..etc]
+    ELEMENT_DATA: Element[]; //[mail.... , msg..... | mail.... ,msg..... | ..etc]
     dataSource: any;
 
     postReq_load: boolean = true;
@@ -38,7 +38,7 @@ export class RequestService {
         }))
         .subscribe({
           next: (postArray) => {
-            // console.log(postArray);
+            console.log(postArray);
     
             this.ELEMENT_DATA = postArray;
             this.dataSource = new MatTableDataSource<Element>(postArray);

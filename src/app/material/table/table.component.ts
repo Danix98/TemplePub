@@ -6,8 +6,7 @@ import { RequestService } from './table_ref/request.service';
 
 @Component({
     selector: 'app-table',
-    templateUrl: './table.component.html',
-    styleUrls: ['../../shared/generics.css', './table.component.css']
+    templateUrl: './table.component.html'
 })
 
 
@@ -16,6 +15,7 @@ export class TableComponent implements AfterViewInit {
 
     displayCol: string[] = ['email', 'messaggio'];
     data = this.RequestService.dataSource;
+    items_xpage: number[] = [1, 5, 10];
     
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
