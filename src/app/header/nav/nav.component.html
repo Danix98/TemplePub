@@ -13,6 +13,11 @@
         <a routerLinkActive="active"
           class="nav-link" routerLink="/info">Find Us</a>
         </div>
+
+          <div *ngIf="router.url === '/shop'" class="ms-auto">
+            <a routerLinkActive="active"
+            class="nav-link" routerLink="/shop/wishlist"> Wishlist </a>
+          </div>
       </div>
   </div>
 </nav>
