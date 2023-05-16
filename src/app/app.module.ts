@@ -16,7 +16,6 @@ import { AppRoutingModule } from './shared/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
-import { WishlistComponent } from './header/nav/wishlist/wishlist.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ShopHeaderComponent } from './shop-header/shop-header.component';
@@ -24,6 +23,7 @@ import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
 import { TableComponent } from './material/table/table.component';
+import { WishlistComponent } from './material/wishlist/wishlist.component';
 import { failForm } from './info/fail-form';
 
 @NgModule({
@@ -36,9 +36,9 @@ import { failForm } from './info/fail-form';
     ShopHeaderComponent,
     ShopInfoComponent,
     ShopCartComponent,
-    WishlistComponent,
-    InfoComponent,
+    InfoComponent, 
     TableComponent,
+    WishlistComponent,
     ShortenPipe,
     failForm
   ],
