@@ -1,7 +1,10 @@
-
+<!-- 
 <a mat-button [matMenuTriggerFor]="menu" class="px-4">Wishlist</a>
 
+
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
+  <div *ngFor="let drink of drinks">
+    <button mat-menu-item> {{ drink.name }},  {{ drink.price }}€</button>
+  </div>
 </mat-menu>
+ -->
