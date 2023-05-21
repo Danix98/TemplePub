@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MaterialModule } from './material/material.module';
 
-import { RequestService } from './material/table/table_ref/request.service';
+import { RequestService } from './material/info/table/table_ref/request.service';
 
 import { ShortenPipe } from './shared/shorten.pipe';
 
@@ -22,8 +22,8 @@ import { ShopHeaderComponent } from './shop-header/shop-header.component';
 import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
-import { TableComponent } from './material/table/table.component';
-import { WishlistComponent } from './material/wishlist/wishlist.component';
+import { TableComponent } from './material/info/table/table.component';
+import { WishlistComponent } from './material/nav/wishlist/wishlist.component';
 import { failForm } from './info/fail-form';
 
 @NgModule({

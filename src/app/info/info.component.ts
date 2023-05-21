@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { RequestService } from '../material/table/table_ref/request.service';
+import { RequestService } from '../material/info/table/table_ref/request.service';
 
 @Component({
   selector: 'app-info',

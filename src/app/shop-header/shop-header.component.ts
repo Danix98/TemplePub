@@ -19,26 +19,18 @@ export class ShopHeaderComponent implements OnInit {
 
   drinks: Drink[];
   button = document.getElementById('btn');
+
+  name? : any; //wishlist
   
   constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
 
   ngOnInit() {
     this.drinks = this.DrinkService.getDrinks().slice();
-
-    this.handleClick();
-    
   }
-  
-  handleClick() {
 
-    this.button.addEventListener('click', function handleClick(event) {
-      console.log("evviva");
-      console.log(event.target);
-    });
-  }
-  
+  onLoadInfo<T>(name: string, stStatus: T, ndStatus: T) {
 
-  onLoadInfo<T>(name: T, stStatus: T, ndStatus: T) {
+    this.name = name; //wishlist
 
     this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
