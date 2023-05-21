@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { RequestService } from '../material/info/table/table_ref/request.service';
+import { RequestTService } from '../material/info/table/table_ref/requestT.service';
 
 @Component({
   selector: 'app-info',
@@ -31,7 +31,7 @@ export class InfoComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private RequestService: RequestService,
+    private RequestTService: RequestTService,
     private router: Router ) { }
 
 
@@ -85,13 +85,13 @@ export class InfoComponent implements OnInit {
             this.sendMessage.reset();
 
             this.errorBack = null;
-            this.RequestService.postReq_load = false;
+            this.RequestTService.postReq_load = false;
             
-            this.RequestService.getPost();
+            this.RequestTService.getPost();
               this.router.navigate(['/home']);
                 setTimeout(() => {
                   this.router.navigate(['/info']);
-                  this.RequestService.postReq_load = true;
+                  this.RequestTService.postReq_load = true;
                 }, 1500)
           }
         });

@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 
-import { RequestService } from '../material/info/table/table_ref/request.service';
+import { RequestTService } from '../material/info/table/table_ref/requestT.service';
 
 @Component({
   selector: 'app-main',
@@ -13,10 +13,10 @@ import { RequestService } from '../material/info/table/table_ref/request.service
 
 export class MainComponent {
   
-  postReq_load = this.RequestService.postReq_load;
+  postReq_load = this.RequestTService.postReq_load;
   top: boolean = false;
 
-  constructor( private RequestService: RequestService ) { }
+  constructor( private RequestTService: RequestTService ) { }
 
 
   

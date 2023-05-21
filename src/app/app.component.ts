@@ -1,7 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { RequestService } from './material/info/table/table_ref/request.service';
+import { RequestTService } from './material/info/table/table_ref/requestT.service';
+import { RequestWService } from './material/nav/wishlist/wishlist_ref/requestW.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
   getVarInfo = false;
   mapStatus: boolean;
 
-  constructor( private RequestService: RequestService ) {
+  constructor( private RequestTService: RequestTService ) {
 
     this.mapStatus = this.getVarInfo ? true : false;
   }
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.RequestService.getPost();
+    this.RequestTService.getPost();
   }
 
 }

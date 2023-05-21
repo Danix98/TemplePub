@@ -10,7 +10,7 @@ import { Element } from './table.interface';
 
 
 @Injectable()
-export class RequestService {
+export class RequestTService {
     constructor( private http: HttpClient ) { }
 
 

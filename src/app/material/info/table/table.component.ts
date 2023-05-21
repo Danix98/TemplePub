@@ -2,7 +2,7 @@
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { MatPaginator } from '@angular/material/paginator';
 
-import { RequestService } from './table_ref/request.service';
+import { RequestTService } from './table_ref/requestT.service';
 
 @Component({
     selector: 'app-table',
@@ -19,7 +19,7 @@ export class TableComponent implements AfterViewInit {
     
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor( private RequestService: RequestService ) { }
+    constructor( private RequestService: RequestTService ) { }
 
 
 

@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MaterialModule } from './material/material.module';
 
-import { RequestService } from './material/info/table/table_ref/request.service';
+import { RequestTService } from './material/info/table/table_ref/requestT.service';
 
 import { ShortenPipe } from './shared/shorten.pipe';
 
@@ -52,7 +52,7 @@ import { failForm } from './info/fail-form';
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [RequestService],
+  providers: [RequestTService],
   bootstrap: [AppComponent]
 })
 
