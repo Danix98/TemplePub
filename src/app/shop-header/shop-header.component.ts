@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Drink } from '../Drink.model';
 import { DrinkService } from '../Drink.service';
 import { DrinkDescService } from '../Drink-desc.service';
+import { RequestWService } from '../material/nav/wishlist/wishlist_ref/requestW.service';
 
 @Component({
   selector: 'app-shop-header',
@@ -19,18 +20,17 @@ export class ShopHeaderComponent implements OnInit {
 
   drinks: Drink[];
   button = document.getElementById('btn');
-
-  name? : any; //wishlist
   
-  constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
+  constructor(
+    private DrinkService: DrinkService,
+    private RequestWService: RequestWService,
+    private router_btn: Router ) { }
 
   ngOnInit() {
     this.drinks = this.DrinkService.getDrinks().slice();
   }
 
-  onLoadInfo<T>(name: string, stStatus: T, ndStatus: T) {
-
-    this.name = name; //wishlist
+  onLoadInfo<T extends string>(name: T, stStatus: T, ndStatus: T) {
 
     this.DrinkService.stStatus = stStatus;
     this.DrinkService.ndStatus = ndStatus;
@@ -41,6 +41,10 @@ export class ShopHeaderComponent implements OnInit {
     this.router_btn.navigate(['shop/info', name],
       { queryParams: {vedi: true} });
     }, 50)
+
+  //wishlist  
+    if(this.RequestWService.list_data.indexOf(name) === -1)
+      this.RequestWService.list_data.push(name)
     
   } onLoadShop<T>(stStatus: T, ndStatus: T) {
     

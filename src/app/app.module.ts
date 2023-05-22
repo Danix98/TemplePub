@@ -7,10 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MaterialModule } from './material/material.module';
-
-import { RequestTService } from './material/info/table/table_ref/requestT.service';
-
-import { ShortenPipe } from './shared/shorten.pipe';
+import { TableComponent } from './material/info/table/table.component';
+import { WishlistComponent } from './material/nav/wishlist/wishlist.component';
 
 import { AppRoutingModule } from './shared/app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,9 +20,12 @@ import { ShopHeaderComponent } from './shop-header/shop-header.component';
 import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
-import { TableComponent } from './material/info/table/table.component';
-import { WishlistComponent } from './material/nav/wishlist/wishlist.component';
+
+import { ShortenPipe } from './shared/shorten.pipe';
 import { failForm } from './info/fail-form';
+
+import { RequestTService } from './material/info/table/table_ref/requestT.service';
+import { RequestWService } from './material/nav/wishlist/wishlist_ref/requestW.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { failForm } from './info/fail-form';
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [RequestTService],
+  providers: [RequestTService, RequestWService],
   bootstrap: [AppComponent]
 })
 

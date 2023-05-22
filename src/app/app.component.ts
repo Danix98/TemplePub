@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   getVarInfo = false;
   mapStatus: boolean;
 
-  constructor( private RequestTService: RequestTService ) {
+  constructor( private RequestTService: RequestTService, private RequestWService: RequestWService ) {
 
     this.mapStatus = this.getVarInfo ? true : false;
   }
@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.RequestTService.getPost();
+    this.RequestWService.sendOnList();
   }
 
 }

@@ -1,15 +1,13 @@
 
-
 export class RequestWService {
 
-    new_data : string;
+    list_data : string[] = [];
 
-
+    
     constructor( ) { }
 
-
-    getData = () => {
-        return this.new_data;
-      }
+    sendOnList = () => {
+        return this.list_data;
+    }
 
 }

@@ -1,6 +1,8 @@
 
 import { Component } from '@angular/core';
 
+import { RequestWService } from './wishlist_ref/requestW.service';
+
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
@@ -10,5 +12,9 @@ import { Component } from '@angular/core';
 
 
 export class WishlistComponent {
+
+  names = this.RequestWService.list_data;
+
+  constructor( private RequestWService: RequestWService ) { }
 
 }
