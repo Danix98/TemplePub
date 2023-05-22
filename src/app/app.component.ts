@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 import { RequestTService } from './material/info/table/table_ref/requestT.service';
 import { RequestWService } from './material/nav/wishlist/wishlist_ref/requestW.service';

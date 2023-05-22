@@ -42,9 +42,18 @@ export class ShopHeaderComponent implements OnInit {
       { queryParams: {vedi: true} });
     }, 50)
 
-  //wishlist  
+  //wishlist
+    //elemento differente
     if(this.RequestWService.list_data.indexOf(name) === -1)
-      this.RequestWService.list_data.push(name)
+      this.RequestWService.list_data.unshift(name)
+    //elemento già selezionato
+    else {
+      const update = this.RequestWService.list_data.indexOf(name)
+      if(update > -1) {
+        this.RequestWService.list_data.splice(update, 1);
+        this.RequestWService.list_data.unshift(name)
+      }
+    }
     
   } onLoadShop<T>(stStatus: T, ndStatus: T) {
     

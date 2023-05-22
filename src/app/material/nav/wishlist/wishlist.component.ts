@@ -13,7 +13,7 @@ import { RequestWService } from './wishlist_ref/requestW.service';
 
 export class WishlistComponent {
 
-  names = this.RequestWService.list_data;
+  names? = this.RequestWService.list_data;
 
   constructor( private RequestWService: RequestWService ) { }
 
