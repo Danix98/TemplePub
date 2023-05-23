@@ -6,6 +6,18 @@
 
 /*** ***/
 
+   .zoom_img img {
+    transition: transform 1s, filter 1s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(60%);
+
+}   .zoom_img:hover img {
+    filter: brightness(100%);
+    transform: scale(1.05);
+}
+
+/*** ***/
+
 nav {
     width: 100%;
 
