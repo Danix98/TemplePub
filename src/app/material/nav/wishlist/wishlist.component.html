@@ -2,7 +2,12 @@
 <a mat-button [matMenuTriggerFor]="menu" class="px-4">Wishlist</a>
 
 <mat-menu #menu="matMenu">
-  <div>
-    <button mat-menu-item *ngFor="let name of names"> {{ name }} </button>
-  </div>
+  <section *ngFor="let name of names">
+    <ng-template *ngIf="name; else none">
+      <button mat-menu-item>{{ name }}</button>
+    </ng-template>
+  </section>
+    <ng-template #none>
+      <button mat-menu-item> Nessun elemento selezionato </button>
+    </ng-template>
 </mat-menu>
