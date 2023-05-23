@@ -3,11 +3,6 @@
 
 <mat-menu #menu="matMenu">
   <section *ngFor="let name of names">
-    <ng-template *ngIf="name; else none">
       <button mat-menu-item>{{ name }}</button>
-    </ng-template>
   </section>
-    <ng-template #none>
-      <button mat-menu-item> Nessun elemento selezionato </button>
-    </ng-template>
 </mat-menu>

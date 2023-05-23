@@ -42,19 +42,22 @@ export class ShopHeaderComponent implements OnInit {
       { queryParams: {vedi: true} });
     }, 50)
 
-  //wishlist
-    //elemento differente
-    if(this.RequestWService.list_data.indexOf(name) === -1)
-      this.RequestWService.list_data.unshift(name)
-    //elemento già selezionato
-    else {
-      const update = this.RequestWService.list_data.indexOf(name)
-      if(update > -1) {
-        this.RequestWService.list_data.splice(update, 1);
-        this.RequestWService.list_data.unshift(name)
-      }
-    }
-    
+        //attiverà wishlist
+        this.RequestWService.check = true;
+
+        //elemento differente
+        if(this.RequestWService.list_data.indexOf(name) === -1)
+          this.RequestWService.list_data.unshift(name)
+        //elemento già selezionato
+        else {
+          const update = this.RequestWService.list_data.indexOf(name)
+          if(update > -1) {
+            this.RequestWService.list_data.splice(update, 1);
+            this.RequestWService.list_data.unshift(name)
+          }
+        }
+      //wishlist
+
   } onLoadShop<T>(stStatus: T, ndStatus: T) {
     
     this.DrinkService.stStatus = stStatus;

@@ -15,7 +15,7 @@
       </div>
 
           <div *ngIf="router.url === '/shop'" class="ms-auto">
-            <app-wishlist></app-wishlist>
+            <app-wishlist *ngIf="checked"></app-wishlist>
           </div>
       </div>
   </div>
