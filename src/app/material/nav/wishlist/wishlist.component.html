@@ -1,7 +1,7 @@
 
 <a mat-button [matMenuTriggerFor]="menu" class="px-4">Wishlist</a>
 
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" class="pt-2">
   <section *ngFor="let name of names">
       <button mat-menu-item>{{ name }}</button>
   </section>
