@@ -2,12 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 
+import { fadeAnimation } from './shared/fading_routing';
 import { RequestTService } from './material/info/table/table_ref/requestT.service';
 import { RequestWService } from './material/nav/wishlist/wishlist_ref/requestW.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  animations: [fadeAnimation]
 })
 
 
@@ -35,6 +37,8 @@ export class AppComponent implements OnInit {
   getRouteAnimationData() {
     return this.context.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
+
+
 
   ngOnInit() {
     this.RequestTService.getPost();
