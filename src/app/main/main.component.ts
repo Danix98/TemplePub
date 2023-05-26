@@ -31,10 +31,6 @@ export class MainComponent {
   text_fiv = "La birra aveva analoga importanza nell'Antico Egitto, dove la popolazione la beveva fin dalla sua infanzia, considerandola anche un alimento ed una medicina. Addirittura una birra a bassa gradazione o diluita con acqua e miele veniva somministrata ai neonati quando le madri non avevano latte. Anche per gli Egizi la birra aveva un carattere mistico, tuttavia c'era una grossa differenza rispetto ai Babilonesi: la produzione della birra non era più artigianale, ma era divenuta una vera e propria industria, con i faraoni che possedevano persino delle fabbriche.";
 
 
-  
-  toTop() {
-    window.scrollTo(0, 0);
-  }
 
   shorten: boolean = true;
       onShorten() {

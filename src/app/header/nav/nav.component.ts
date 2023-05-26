@@ -7,7 +7,7 @@ import { RequestWService } from '../../material/nav/wishlist/wishlist_ref/reques
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['../../shared/generics.css', './nav.component.css']
+  styleUrls: ['../../shared/generics.css', './nav.component.css'],
 })
 
 
