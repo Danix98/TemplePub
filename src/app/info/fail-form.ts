@@ -1,5 +1,9 @@
 
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import {
+    Component,
+    EventEmitter,
+    Input,
+    Output } from "@angular/core";
 import {
     animate,
     state,
@@ -13,14 +17,10 @@ import {
     styleUrls: ['./alert.component.css'],
     animations: [
         trigger('alertState', [
-            state('in', style({
-                opacity: 1,
-                transform: 'translateY(0)'
-            })),    transition('void => *', [
-                        style({
-                            opacity: 0,
-                            transform: 'translateY(75px)'
-                        }), animate(300) ])
+            state('in',
+            style({ opacity: 1, transform: 'translateY(0)'})),
+            transition('void => *', [
+                        style({ opacity: 0, transform: 'translateY(75px)'}), animate(300) ])
         ])
     ]
 })

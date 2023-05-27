@@ -4,7 +4,7 @@
 
 <app-header></app-header>
 
-<div [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+<div [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : '' ">
     <router-outlet #outlet="outlet">
         <hr class="my-3" style="width: 35%; margin: auto"> <!-- divisore x pagina -->
     </router-outlet>
