@@ -6,11 +6,13 @@ import { Drink } from '../Drink.model';
 import { DrinkService } from '../Drink.service';
 import { DrinkDescService } from '../Drink-desc.service';
 import { RequestWService } from '../material/nav/wishlist/wishlist_ref/requestW.service';
+import { fadeAnimation } from '../shared/fading_routing';
 
 @Component({
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
   styleUrls: ['../shared/generics.css' ,'./shop-header.component.css'],
+  animations: [fadeAnimation],
   providers: [DrinkService, DrinkDescService]
 })
 

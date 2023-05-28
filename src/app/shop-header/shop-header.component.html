@@ -35,10 +35,13 @@
 
     <div class="col-md-1 breaker"></div> <!--non va ad incidere come colonna-->
     
-    <div class="col-md-5"> <!-- DX --> <router-outlet></router-outlet> </div>
+    <!-- DX -->
+    <div [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : '' " class="col-md-5"> 
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+
 
     <span class="empty"></span>
-
 </section>
 
 <div id='stars'></div>
