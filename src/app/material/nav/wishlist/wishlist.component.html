@@ -1,8 +1,20 @@
 
 <a mat-button [matMenuTriggerFor]="menu" class="px-4">Wishlist</a>
 
+<!-- MODIFICA ARRAY: arr_wishlist[{nome - prezzo (rel)}, {nome - prezzo (rel)} ecc.] -->
+<!-- CLICK: ad ogni key dell'oggetto click verso component ACQUISTA relativo -->
+<!-- LIMITE: max 5 key in wishlist, se aggiunto il sesto, pop dell'elemento più vecchio -->
+<!-- <SVUOTA>: svuota array -->
+<!-- <ACQUISTA TUTTO>: crea nuovo component con tabella elementi presenti in wishlist -->
+    <!-- la tabella presenta in ogni riga nome, img prodotto, prezzo x q scelto -->
+    <!-- in fondo la tabella un pulsante <ACQUISTA TUTTO> con risposta totale di prezzo -->
+
 <mat-menu #menu="matMenu" class="pt-2">
+  <button mat-menu-item>SVUOTA</button>
+
   <section *ngFor="let name of names">
-      <button mat-menu-item>{{ name }}</button>
+    <button mat-menu-item>{{ name }}</button>
   </section>
+
+  <button mat-menu-item>ACQUISTA TUTTO</button>
 </mat-menu>
