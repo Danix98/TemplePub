@@ -16,18 +16,16 @@ import { DrinkService } from '../../Drink.service';
   selector: 'app-shop-cart',
   templateUrl: './shop-cart.component.html',
   styleUrls: ['../../shared/generics.css', './shop-cart.component.css'],
+
   animations: [
-    trigger('inputState', [
-
-      state('none', style({
-        'box-shadow': 'inset 0px 0px 40px 40px rgb(255, 225, 0, 0.0)'
-      })),
-      state('active', style({
-        'box-shadow': 'inset 0px 0px 40px 40px rgb(255, 225, 0, 0.3)'
-      })),
-
-      transition('none <=> active', animate(200)),
-
+    trigger('inputState',
+    [
+      //due stadi:
+        //1: notifica cambio valore dato da utente (bianco->giallo)
+        //2: notifica cambio valore dato da utente (giallo->bianco)
+      state('none', style({'box-shadow': 'inset 0px 0px 40px 40px rgb(255, 225, 0, 0.0)'})),
+      state('active', style({'box-shadow': 'inset 0px 0px 40px 40px rgb(255, 225, 0, 0.3)'})),
+      transition('none => active', animate(200)) 
     ])
   ]
 })
