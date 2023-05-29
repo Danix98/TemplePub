@@ -21,6 +21,7 @@ import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
 import { InfoComponent } from './info/info.component';
 
+import { WebsiteEffect } from './shared/website_effect/website_effect';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { failForm } from './info/fail-form';
 
@@ -40,6 +41,7 @@ import { RequestWService } from './material/nav/wishlist/wishlist_ref/requestW.s
     InfoComponent, 
     TableComponent,
     WishlistComponent,
+    WebsiteEffect,
     ShortenPipe,
     failForm
   ],
