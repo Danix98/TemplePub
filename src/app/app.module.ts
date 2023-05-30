@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { GalleryComponent } from './gallery/gallery.component';
 import { ShopHeaderComponent } from './shop-header/shop-header.component';
 import { ShopInfoComponent } from './shop-header/shop-info/shop-info.component';
 import { ShopCartComponent } from './shop-header/shop-cart/shop-cart.component';
@@ -31,17 +32,18 @@ import { RequestWService } from './material/nav/wishlist/wishlist_ref/requestW.s
 @NgModule({
   declarations: [
     AppComponent,
+    WebsiteEffect,
     HeaderComponent,
     NavComponent,
-    MainComponent,
     FooterComponent,
+    MainComponent,
+    GalleryComponent,
     ShopHeaderComponent,
+    WishlistComponent,
     ShopInfoComponent,
     ShopCartComponent,
     InfoComponent, 
     TableComponent,
-    WishlistComponent,
-    WebsiteEffect,
     ShortenPipe,
     failForm
   ],
