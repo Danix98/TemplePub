@@ -3,37 +3,46 @@
 
 <section class="row d-flex m-auto">
 
-    <div class="col-md-7"> <!-- SX -->
+    <!-- SX -->
+    <div class="col-md-7">
         <div class="bg-light me-3 pb-5" id="vetrina_cont">
             <h2 class="py-4">vetrina</h2>
 
-            <div class="row mx-1">
-                <div class="col-md-4 my-2"
+    <!-- SPINNER, con conseguente caricamento VETRINA -->    
+            <section [style.display]="!db_vetrina ? 'block' : 'none'">
+                <div class="loader" style="background: rgb(190, 180, 170);"></div>
+                <p style="font-weight: bold;">Caricamento...</p>
+            </section>
 
-
-                    *ngFor="let drink of drinks">
-                    <div class="galleria mx-4">
-                        <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
-
-                        <div class="visual">
-                             <h5>{{ drink.name | uppercase }}</h5>
+            <section [style.display]="db_vetrina ? 'block' : 'none'">
+                <div class="row mx-1">
+                    <div class="col-md-4 my-2"
+    
+                        *ngFor="let drink of drinks">
+                        <div class="galleria mx-4">
+                            <img src="{{ drink.imgpath }}" alt="{{ drink.name }}" class="img_shop">
+    
+                            <div class="visual">
+                                 <h5>{{ drink.name | uppercase }}</h5>
+                            </div>
                         </div>
+                        <div class="mt-2 mx-auto">
+                            <button (click)="onLoadInfo(drink.name, drink.imgpath, drink.description)"
+                                    type="button" id="btn" class="btn btn-outline-info me-1">Vedi</button>
+                            <button (click)="onLoadShop(drink.name, drink.price)"
+                                    type="button" class="btn btn-outline-success ms-1">Acquista</button>
+                        </div>
+    
                     </div>
-                    <div class="mt-2 mx-auto">
-                        <button (click)="onLoadInfo(drink.name, drink.imgpath, drink.description)"
-                                type="button" id="btn" class="btn btn-outline-info me-1">Vedi</button>
-                        <button (click)="onLoadShop(drink.name, drink.price)"
-                                type="button" class="btn btn-outline-success ms-1">Acquista</button>
-                    </div>
-
-
                 </div>
-            </div>
+            </section>
           
         </div>
     </div>
 
-    <div class="col-md-1 breaker"></div> <!--non va ad incidere come colonna-->
+    <!--non va ad incidere come colonna-->
+    <div [style.display]="db_vetrina ? 'block' : 'none'"
+        class="col-md-1 breaker"></div>
     
     <!-- DX -->
     <div [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : '' " class="col-md-5"> 
