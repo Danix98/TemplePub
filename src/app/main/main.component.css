@@ -5,6 +5,7 @@ p {
 
 img {
     border-radius: 3em;
+    z-index: 10;
 
 }   img.img_odd {
         border-top-right-radius: 8rem;
@@ -21,3 +22,20 @@ iframe {
     box-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, 0.4);
 }
 
+#backTop {
+    border: none;
+    outline: inherit;
+    
+    right: 0;
+    bottom: 8em;
+    margin: 0 10px;
+    padding: 10px;
+    z-index: 1;
+    text-decoration: none;
+
+    font-weight: bold;
+    background-color: black;
+    color: white;
+
+    border-radius: 20px;
+}

@@ -1,5 +1,13 @@
 
-<section *ngIf="postReq_load" class="container-fluid">
+<section *ngIf="postReq_load" class="container-fluid" style="position: relative">
+
+    <div style="position: absolute">
+        <button
+            *ngIf="isVisible"
+            id="backTop" (click)="toTop()"
+            style="position: fixed">
+            Back To Top ▲</button>
+    </div>
 
     <br>
     
