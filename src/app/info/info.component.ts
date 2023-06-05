@@ -9,7 +9,10 @@ import { RequestTService } from '../material/info/table/table_ref/requestT.servi
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrls: ['../shared/generics.css', '../shared/spinner.css', './info.component.css']
+  styleUrls: [
+    '../shared/generics.css',
+    '../shared/spinner.css',
+    './info.component.css']
 })
 
 
@@ -56,7 +59,8 @@ export class InfoComponent implements OnInit {
       if(this.sendMessage.controls['messaggio'].value.length < this.formChar) {
         this.errorBack = null;
 
-        this.sendMessage.controls['messaggio'].setErrors({'incorrect': true}); //form invalid
+      //form invalid
+        this.sendMessage.controls['messaggio'].setErrors({'incorrect': true});
         this.errorFront =
         'Richiesta non inviata. Il messaggio deve contenere almeno ' + this.formChar + ' caratteri.';
 

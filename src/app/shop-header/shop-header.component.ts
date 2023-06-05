@@ -11,7 +11,10 @@ import { RequestWService } from '../material/nav/wishlist/wishlist_ref/requestW.
 @Component({
   selector: 'app-shop-header',
   templateUrl: './shop-header.component.html',
-  styleUrls: ['../shared/generics.css', '../shared/spinner.css', './shop-header.component.css'],
+  styleUrls: [
+    '../shared/generics.css',
+    '../shared/spinner.css',
+    './shop-header.component.css'],
   animations: [fadeAnimation],
   providers: [DrinkService, DrinkDescService]
 })

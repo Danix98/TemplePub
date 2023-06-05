@@ -20,11 +20,10 @@ export class NavComponent implements DoCheck {
 
 
 
-//controlla (se e quanto ==> true, else => false) visualizzazione vetrina
+//visualizzazione vetrina con doCheck
   ngDoCheck() {
     this.onChecked();
   }
-
   onChecked() {
     setTimeout(() => {
       this.checked = this.RequestWService.check;

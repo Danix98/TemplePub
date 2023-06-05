@@ -8,6 +8,4 @@ import { Component } from "@angular/core";
     styleUrls: ['./website_effect.css']
 })
 
-
-
-export class WebsiteEffect {}
+export class WebsiteEffect { }

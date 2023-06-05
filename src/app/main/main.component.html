@@ -1,9 +1,9 @@
 
 <section *ngIf="postReq_load" class="container-fluid" style="position: relative">
 
-    <div style="position: absolute">
+    <!-- BACK TO TOP -->
+    <div *ngIf="isVisible" style="position: absolute">
         <button
-            *ngIf="isVisible"
             id="backTop" (click)="toTop()"
             style="position: fixed">
             Back To Top ▲</button>
@@ -11,6 +11,8 @@
 
     <br>
     
+
+
     <h2 class="text-center pb-2">La Nostra Storia</h2>
 
     <div class="row">
@@ -43,7 +45,7 @@
 
     <br>
 
-
+    <!--CUSTOM PIPE -->
     <div *ngIf="shorten; else notShorten" class="row justify-content-center my-5">
         <div (click)="onShorten()"
             class="col-md-5 mx-1 special_p" style="border-style: outset; cursor: pointer">

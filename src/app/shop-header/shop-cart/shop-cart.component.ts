@@ -1,7 +1,6 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   animate,
   state,
@@ -20,9 +19,6 @@ import { DrinkService } from '../../Drink.service';
   animations: [
     trigger('inputState',
     [
-      //due stadi:
-        //1: notifica cambio valore dato da utente (bianco->giallo)
-        //2: notifica cambio valore dato da utente (giallo->bianco)
       state('none', style({'box-shadow': 'inset 0px 0px 40px 40px rgb(255, 225, 0, 0.0)'})),
       state('active', style({'box-shadow': 'inset 0px 0px 40px 40px rgb(255, 225, 0, 0.3)'})),
       transition('none => active', animate(200)) 
@@ -48,10 +44,7 @@ export class ShopCartComponent {
   
   effect = 'none';
   
-  constructor(
-    private DrinkService: DrinkService,
-    private router_btn: Router,
-    private BrowserAnimationsModule: BrowserAnimationsModule ) { }
+  constructor( private DrinkService: DrinkService, private router_btn: Router ) { }
 
 
 

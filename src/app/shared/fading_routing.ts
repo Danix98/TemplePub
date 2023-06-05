@@ -7,11 +7,9 @@ import {
   query,
 } from '@angular/animations';
 
-//effetto riutilizzato per ogni elemento in navbar
 export const fadeAnimation =
   trigger('fadeAnimation',
   [
-    //zero stadi: la transizione di 'fading' avviene in un unica sequenza di azioni
     transition('* => *',
 
       [query(':enter',

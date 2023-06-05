@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['../shared/generics.css', './header.component.css']
 })
 
-
-
 export class HeaderComponent { }
